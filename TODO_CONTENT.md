@@ -9,7 +9,7 @@
 - [ ] 实习起止时间、允许公开的职位英文表述；目前仅按 brief 显示 Game Systems Design Intern。
 - [ ] UCI 学习起止时间；不推测毕业时间。
 
-已确认：Beiming Xu、UCI Game Design & Interactive Media 本科在读、Game Designer | Producer 定位、HoYoverse 系统策划实习经历、GitHub S1aury 与 S1aury.github.io 仓库名。
+已确认：Beiming Xu、UCI Game Design & Interactive Media 本科在读、Game Designer | Producer 定位、MiHoyo（米哈游）系统策划实习经历、参与项目 Genshin Impact、GitHub S1aury 与 S1aury.github.io 仓库名。
 
 ## 所有重点项目均需补充
 
