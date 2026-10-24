@@ -21,12 +21,14 @@ export const otherProjects = [
 // Add only activities and responsibilities approved for public display.
 export const internship: {
   company: string;
+  project: string;
   role: string;
   dates: string;
   responsibilities: string[];
   activities: { title: string; summary: string; contribution: string }[];
 } = {
-  company: "HoYoverse",
+  company: "MiHoyo",
+  project: "Genshin Impact",
   role: "Game Systems Design Intern",
   dates: "",
   responsibilities: [],
