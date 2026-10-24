@@ -17,7 +17,7 @@ const steps = ['Problem','Analysis','Design','Prototype','Playtest','Iteration']
   </section>
   <section id="internship" class="internship-section section" aria-labelledby="internship-title"><div class="wrap">
     <div class="section-heading"><p class="eyebrow">01 / INDUSTRY EXPERIENCE</p><h2 id="internship-title">Internship</h2><p>Activities and responsibilities from my game systems design internship.</p></div>
-    <div class="internship-heading"><div><h3>{internship.company}</h3><p class="internship-role">{internship.role}</p></div><p class="pending">{internship.dates || 'Dates · TODO'}</p></div>
+    <div class="internship-heading"><div><h3>{internship.company}</h3><p class="internship-role">{internship.role}</p><p class="internship-project">Project · {internship.project}</p></div><p class="pending">{internship.dates || 'Dates · TODO'}</p></div>
     <div class="internship-details">
       <div><p class="eyebrow">MY RESPONSIBILITIES</p>{internship.responsibilities.length ? <ul>{internship.responsibilities.map(item => <li>{item}</li>)}</ul> : <p class="pending">TODO · Specific responsibilities and individual contributions to be added.</p>}</div>
       <div><p class="eyebrow">SELECTED ACTIVITIES</p>{internship.activities.length ? internship.activities.map(activity => <article class="internship-activity"><h4>{activity.title}</h4><p>{activity.summary}</p><p><strong>My contribution:</strong> {activity.contribution}</p></article>) : <p class="pending">TODO · Add public activity descriptions and explain my role in each.</p>}</div>
@@ -50,6 +50,7 @@ const steps = ['Problem','Analysis','Design','Prototype','Playtest','Iteration']
   .internship-heading { display: flex; align-items: start; justify-content: space-between; gap: 24px; padding: 28px 0; border-block: 1px solid var(--line); }
   .internship-heading h3 { font-size: clamp(32px, 3.6vw, 48px); margin-bottom: 12px; }
   .internship-role { color: var(--orange); font-size: 15px; margin: 0; }
+  .internship-project { color: var(--muted); font-size: 14px; margin: 10px 0 0; }
   .internship-details { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; padding-block: 34px; }
   .internship-details .eyebrow { color: var(--muted); margin-bottom: 18px; }
   .internship-details ul { padding-left: 18px; margin: 0; font-size: 15px; line-height: 1.8; }
