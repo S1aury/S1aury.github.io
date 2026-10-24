@@ -1,6 +1,6 @@
 ---
 title: RatO.oLight
-order: 4
+order: 2
 genre: Team puzzle project
 role: Lead Designer / Project Manager
 summary: A 2024 team game project with a focus on level and puzzle design, difficulty progression, and cross-disciplinary coordination.

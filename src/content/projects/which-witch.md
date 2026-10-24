@@ -1,6 +1,6 @@
 ---
 title: Which Witch Is Gonna Be Rich?
-order: 2
+order: 4
 genre: Potion shop management
 role: Lead Design · exact title TODO
 summary: A potion shop management game involving ingredients, brewing, customer orders, competition, equipment upgrades, and limited operating time.
