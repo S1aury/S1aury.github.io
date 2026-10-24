@@ -15,13 +15,16 @@
 - 资料审查：未添加团队规模、测试人数、评价、完成率、发布成果或未确认的个人具体贡献。缺失资料使用 TODO。
 - 本地 Git main 仓库已初始化，origin 指向本人确认的 `https://github.com/S1aury/S1aury.github.io.git`。
 
-## 发布阻塞
+## 发布记录（2026-10-23）
 
-- 未认证的 GitHub 仓库 API 返回 404。这无法区分仓库不存在与私有仓库不可见。
-- `git ls-remote` 未成功：本机 Git Credential Manager 的调用受到运行环境限制，之后无法读取用户名，未取得远程访问。
-- GitHub 插件已发现，但尚未确认安装或连接。
-- 未读取远程已有内容，未创建远程仓库，未 push，未运行远程 Actions，未确认 Pages 发布，未把预期地址当作已上线网站。
-- 已使用本机现有 Git 提交身份完成初版 commit；未修改全局身份，也未编造邮箱。当前提交以 `git log` 为准。
+- 已创建公开仓库：https://github.com/S1aury/S1aury.github.io 。
+- 已通过本人登录的 GitHub 网页上传源码与资源，初次上传的 36 个文件与本地文件逐一核对，Git blob SHA 全部一致。
+- Pages Source 已保存为 GitHub Actions；默认域名使用强制 HTTPS。
+- 首次 Astro 工作流：https://github.com/S1aury/S1aury.github.io/actions/runs/40049147632 。build 与 deploy 均成功。
+- 首页、四个项目详情页、social.png、favicon.svg 均通过 HTTPS 返回 HTTP 200，页面包含正确作品集内容。
+- 正式网站：https://s1aury.github.io/ 。
+- 本地 main 已跟踪 origin/main；原本地初版历史保留为 local-initial-20261021 分支。
+- GitHub 插件能读取新仓库，但 create_blob 与 create_file 的写入返回 403；本次通过已登录网页完成发布，没有读取或创建凭据。此限制未阻断网页发布，后续命令行 push 仍可能需要正常登录。
 
 ## 验证边界
 
@@ -29,4 +32,4 @@
 
 当前案例是可维护的内容初稿；设计决策、迭代证据、图片、简历和联系方式待本人补充，不能视为完整的招聘案例内容。
 
-首次发布剩余步骤见 `GITHUB_GUIDE_ZH.md`：确认远程内容 → 登录 → 设置真实提交身份 → commit / push → Pages Source 选 GitHub Actions → 核对 build / deploy → 实际访问。
+日常修改与发布步骤见 `GITHUB_GUIDE_ZH.md`。后续提交到 main 将自动构建和部署。

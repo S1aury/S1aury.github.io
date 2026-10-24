@@ -41,7 +41,7 @@ StarHaven、Inspiration.zip / 灵感.zip、多人避难所求生项目目前仅�
 - [x] 账户和仓库名已确认。
 - [x] site 与 base 对应用户主页形式。
 - [x] main 自动部署工作流已编写。
-- [ ] 目标 GitHub 仓库的访问与写入授权。
-- [ ] 如远程仓库已有内容，先读取并整合。
-- [ ] Pages Source 设为 GitHub Actions。
-- [ ] 首次推送、Actions 成功、Pages 发布、线上实际访问分别核对。
+- [x] 仓库已创建，通过本人登录的 GitHub 网页写入源码。
+- [x] 创建前核对仓库名称可用；创建后逐项核对 36 个远程文件与本地文件，字节一致。
+- [x] Pages Source 已设为 GitHub Actions，默认域名强制 HTTPS。
+- [x] 源码提交、Actions build/deploy 成功、Pages 发布、首页与四个详情页 HTTP 200 已分别确认。

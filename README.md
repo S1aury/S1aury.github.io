@@ -1,6 +1,6 @@
 # Beiming Xu — Game Design Portfolio
 
-Astro 静态作品集。英文页面，中文维护说明，无服务器、数据库或前端框架依赖。正式目标仓库由本人确认为 `S1aury/S1aury.github.io`，目标地址为 `https://S1aury.github.io/`；目标地址不代表已经发布。
+Astro 静态作品集。英文页面，中文维护说明，无服务器、数据库或前端框架依赖。正式目标仓库由本人确认为 `S1aury/S1aury.github.io`，网站已于 2026-10-23 发布到 [https://s1aury.github.io/](https://s1aury.github.io/)。
 
 ## 本地运行
 

@@ -1,6 +1,8 @@
 # 从本地作品集到 GitHub Pages
 
-本文针对本人确认的账户 **S1aury** 与仓库 **S1aury.github.io**。预期网站地址为 `https://S1aury.github.io/`，是否上线必须以 Actions、Pages 和实际访问结果确认。
+本文针对本人确认的账户 **S1aury** 与仓库 **S1aury.github.io**。网站已于 2026-10-23 发布：[https://s1aury.github.io/](https://s1aury.github.io/)。首次 Actions 的 build 与 deploy 均成功，首页和四个详情页已实际访问。下文保留完整配置教程，创建仓库与启用 Pages 的首次设置已完成。
+
+本地 main 已跟踪 origin/main，初期本地历史保留在 local-initial-20261021 分支。此次发布通过已登录的 GitHub 网页提交；GitHub 插件的源码写入接口返回 403，因此未依赖它写入。以后使用命令行 push 时，如提示登录，使用正常的 GitHub / Git Credential Manager 登录流程；浏览器登录与命令行登录是不同的会话。
 
 ## 这些工具在项目里做什么
 
