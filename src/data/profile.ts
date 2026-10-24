@@ -12,6 +12,7 @@ export const profile = {
   resume: "", // Local example: 'resume/Beiming-Xu-Resume.pdf'; no leading slash.
 };
 export const otherProjects = [
+  "Humanize",
   "StarHaven",
   "Inspiration.zip / 灵感.zip",
   "Multiplayer survival project",
