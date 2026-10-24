@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ProjectMedia from './ProjectMedia.astro';
+import { local } from '../lib/paths';
+interface Props { project: CollectionEntry<'projects'>; index: number }
+const { project, index } = Astro.props;
+const p = project.data;
+---
+<article class="project reveal">
+  <a class="project-image-link" href={local(`projects/${project.id}/`)} aria-label={`View ${p.title} case study`}>
+    <ProjectMedia {...p} index={index + 1} />
+  </a>
+  <div class="project-copy">
+    <p class="eyebrow">0{index + 1} / {p.genre}</p>
+    <h3><a href={local(`projects/${project.id}/`)}>{p.title}</a></h3>
+    <p class="role">{p.role}</p>
+    <p>{p.summary}</p>
+    <ul class="tags" aria-label="Design focus">{p.focus.map(f => <li>{f}</li>)}</ul>
+    <a class="text-link" href={local(`projects/${project.id}/`)}>View case study <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
