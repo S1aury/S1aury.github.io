@@ -67,3 +67,11 @@ Other Projects 只是资料待整理的名称列表，位于 `profile.ts` 的 `o
 ## 每次更新后
 
 运行 `npm run check`、`npm run build`、`npm run verify`。在桌面和手机宽度检查长标题、图片裁切和目录，确认 TODO、角色与证据准确，再 commit 和 push。不要把 node_modules、dist、凭据或不宜公开的实习文件加入仓库。
+
+## Internship 栏位
+
+首页顺序为姓名介绍 → Internship → Selected Projects。导航包含 Internship。实习内容集中在 `src/data/profile.ts` 的 `internship` 对象，字段包括公司、职位、日期、职责数组和活动数组。
+
+`responsibilities` 每项写一条本人实际负责的工作；`activities` 每项包含 `title`、`summary`、`contribution`，分别说明活动名称、活动内容与本人贡献。空数组会显示 TODO；未提供的时间不推测。添加活动不需要修改组件。
+
+优先提供 1–2 个可以公开的具体活动，每个活动说明目标、本人工作、关键取舍及已知结果。有可公开截图或链接时再接入，未公开或保密资料不上传。网站目前只确认 HoYoverse 和 Game Systems Design Intern 的职位信息。
