@@ -16,3 +16,18 @@ export const otherProjects = [
   "Inspiration.zip / 灵感.zip",
   "Multiplayer survival project",
 ];
+
+// Add only activities and responsibilities approved for public display.
+export const internship: {
+  company: string;
+  role: string;
+  dates: string;
+  responsibilities: string[];
+  activities: { title: string; summary: string; contribution: string }[];
+} = {
+  company: "HoYoverse",
+  role: "Game Systems Design Intern",
+  dates: "",
+  responsibilities: [],
+  activities: [],
+};
