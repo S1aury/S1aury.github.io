@@ -1,58 +1,74 @@
 ---
 title: RatO.oLight
 order: 2
-genre: Team puzzle project
-role: Lead Designer / Project Manager
-summary: A 2024 team game project with a focus on level and puzzle design, difficulty progression, and cross-disciplinary coordination.
+genre: 2D exploration & puzzle platformer
+role: Project Manager / Lead Designer
+summary: "Explore a laboratory as a small mouse, learn how light changes objects, and use that knowledge to solve puzzles and find a way out."
 focus: [Level Design, Puzzle Design, Difficulty Progression, Team Leadership]
 accent: blue
-year: '2024'
+year: 'Oct 2024'
 ---
 
 ## 01 — Overview
 
-RatO.oLight is a 2024 team game project. I served as Lead Designer / Project Manager, worked on level and puzzle design, and coordinated members across disciplines.
+RatO.oLight is a 2D platforming and exploration-puzzle game. Players control a small mouse that wakes in a laboratory, searches for cheese, learns how different lighting affects objects, and looks for a way out.
 
-> **TODO:** Confirm team composition, engine, platform, exact development dates, build status, and any Game Jam name or time limit before publishing those details.
+Its progression uses knowledge gates: understanding the world's rules opens further possibilities for exploration.
+
+| Project context | Details |
+| --- | --- |
+| Development | October 2024 |
+| Status | Completed game jam project |
+| Tools / platforms | Unity / Windows and Mac |
+| Team | Approximately 8 people |
+| My role | Project Manager / Lead Designer |
 
 ## 02 — Design Challenge
 
-The planned case study focus is puzzle structure, difficulty, player understanding, and team collaboration.
+The level-design goal was to help players understand light-dependent object behavior through the environment, then apply that knowledge in later puzzles and exploration.
 
-> **TODO:** Describe one real level or production problem and the evidence behind it. The focus areas do not establish that any particular player issue occurred.
+This describes the intended design challenge. Specific examples of player misunderstanding or difficulty have not yet been documented for this case study.
 
 ## 03 — Design Goals & Constraints
 
-> **TODO:** Add the intended player experience, puzzle rules, difficulty goals, and actual schedule or tool constraints. Do not infer a jam duration or team size.
+Later puzzles need to build on rules the player has already had an opportunity to learn. My level and difficulty work focused on the relationship between introducing a rule and asking the player to use it.
+
+The game jam context also required design and production work to progress together across multiple disciplines. The exact jam duration and milestones are not included until supporting details are available.
 
 ## 04 — My Contributions
 
-- Lead Designer / Project Manager.
-- Level and puzzle design.
-- Coordination across disciplines.
+- Designed level structure and puzzle logic.
+- Worked on difficulty progression and the order in which players encounter puzzle requirements.
+- Coordinated art, programming, design, and audio members as Project Manager.
 
-These responsibilities are confirmed in the supplied brief. Specific levels, documents, and implementation contributions still need attribution.
+These are my responsibility areas; a specific level breakdown and contributor attribution will be added with the supporting materials.
 
 ## 05 — Design Decisions
 
-### Show a puzzle as a sequence of decisions
+### Connect learning with exploration
 
-> **TODO:** Add a verified level map. Identify what the player sees, the actions available, the information required, and the feedback after each action. Then compare the considered options with the final design and its trade-offs.
+Light-dependent behavior supplies the rules players need to understand. Knowledge-gated progression makes that understanding relevant beyond an isolated puzzle.
 
-A difficulty progression should be explained through the rules and knowledge required by each level, supported by actual level materials. No progression or success metrics are asserted here.
+My level-design focus was how to arrange that learning and subsequent application. A representative level is still needed to show the actual layout, what the player sees, the solution, and the alternatives considered.
+
+> **TODO:** Add one real puzzle map and explain a specific layout or progression decision, including its reasoning and trade-offs.
 
 ## 06 — Prototype & Iteration
 
-> **TODO:** Add an actual revision with dated screenshots or diagrams, recorded feedback, and a description of what changed. Distinguish intended improvements from test results.
+I iterated on level structure and puzzle logic during development.
+
+> **TODO:** Supply a concrete before-and-after example, the reason for the change, and any recorded observations. No completion rate or measured improvement is claimed.
 
 ## 07 — Production & Collaboration
 
-I coordinated members from different disciplines alongside my design work.
+I combined level and puzzle design with coordination across art, programming, design, and audio. This role required keeping the design work connected to what different members needed to implement.
 
-> **TODO:** Add a specific task handoff, scope decision, or production discussion. Explain the constraint, my action, the team's response, and the documented outcome without claiming a delivery result that has not been confirmed.
+> **TODO:** Add one specific handoff, coordination issue, or scope decision and describe my action and the documented result.
 
 ## 08 — Outcome & Reflection
 
-> **TODO:** Confirm the project's current outcome and available build. Add a reflection grounded in one design or coordination decision and identify any remaining limitations.
+The project was completed as a game jam work. Detailed build links and test results will be added when available.
 
-<details><summary>Supporting materials — pending</summary><p>TODO: approved level layouts, screenshots, gameplay video, production artifacts, test observations, build link, and contributor attribution.</p></details>
+This case study will use an annotated level and an actual revision to explain how the intended learning sequence translated into the playable game. The current text does not establish how successfully players learned the rules.
+
+<details><summary>Supporting materials — pending</summary><p>TODO: screenshots, representative level layout and solution, iteration example, jam details, confirmed build links, and contributor attribution.</p></details>
