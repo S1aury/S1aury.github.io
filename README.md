@@ -36,14 +36,15 @@ src/layouts/           共享页面、导航、SEO、交互
 src/styles/            响应式设计变量与样式
 src/lib/paths.ts       所有本地资源和页面路径统一添加 base
 public/images/         按项目分目录存放真实截图
-public/resume/         经本人确认可公开的 PDF 简历
+public/resume/         经本人确认可公开的英文 PDF 简历
+public/videos/         项目录屏（手动播放，不自动加载）
 .github/workflows/     main 分支自动构建发布
 scripts/               构建产物检查
 ```
 
 ## 页面与设计
 
-首页：Hero → Selected Projects / Other Projects → Design Thinking → Production → Experience → About / Contact。四个案例分别位于 `/projects/hell-or-sell/`、`/projects/which-witch/`、`/projects/waltz-of-weights/`、`/projects/ratoolight/`。
+首页：Hero → Internship → Selected Projects / Other Projects → Design Thinking → Production → Experience → About / Contact。四个案例分别位于 `/projects/hell-or-sell/`、`/projects/which-witch/`、`/projects/waltz-of-weights/`、`/projects/ratoolight/`。
 
 暖白纸感、深色文字、橙色强调；不使用第三方字体或重型动画。CSS 几何占位与真实素材明确区分。菜单使用原生 details，关闭 JavaScript 仍能导航与阅读。支持键盘焦点、跳过导航和减少动态效果。
 
