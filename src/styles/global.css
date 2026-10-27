@@ -1105,3 +1105,10 @@ img {
     transform: none;
   }
 }
+
+/* Preserve the complete game UI in supplied captures. */
+.project-media.has-capture, .case-hero > .project-media.has-capture { aspect-ratio: 16 / 9; background: #17131e; }
+.project-media.has-capture img { object-fit: contain; }
+.prose figure { margin: 32px 0; }
+.prose figure img, .prose video { display: block; width: 100%; height: auto; }
+.prose figcaption { color: var(--muted); font-size: 13px; line-height: 1.6; margin-top: 10px; }
