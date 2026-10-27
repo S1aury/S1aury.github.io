@@ -6,16 +6,16 @@ role: Lead Designer
 summary: "A Unity project focused on gameplay design, map design and construction, and collaboration with programmers to bring the design into the game."
 focus: [Puzzle Design, Level Design, Mechanic Design, Player Guidance]
 accent: olive
-year: 'Feb–Jun 2024'
+year: 'Nov 2025'
 ---
 
 ## 01 — Overview
 
-I joined Waltz of Weights in February 2024, and development ended in June 2024. The project used Unity and targeted Windows.
+Waltz of Weights was developed in November 2025 for a MiHoyo game jam. The project used Unity and targeted Windows.
 
 | Project context | Details |
 | --- | --- |
-| My involvement | February–June 2024 |
+| My involvement | November 2025 |
 | Tools / platform | Unity / Windows |
 | Team | One designer and two programmers |
 | My role | Lead Designer |
@@ -24,13 +24,13 @@ I joined Waltz of Weights in February 2024, and development ended in June 2024. 
 
 My work covered gameplay design, map design and construction, and coordination with programmers during implementation.
 
-The detailed mechanic and puzzle account is still being checked against the project materials. It will be added once the source design has been matched to this project.
+For the jam theme “Dance with the World,” I interpreted dancing as coordination and complementarity. WASD and the mouse take different responsibilities, creating a single-player puzzle experience built around coordinating two inputs.
 
 ## 03 — Design Goals & Constraints
 
 The team consisted of one designer and two programmers, without a dedicated art role. The case study will focus on how gameplay and map design were developed within that team structure.
 
-> **TODO:** Confirm the project's specific mechanic rules, intended player experience, and the relationship between its game jam context and the development period above.
+The design intent was to make challenges depend on timing, complementary abilities, and spatial judgment, emphasizing understanding and coordination rather than reaction speed. Detailed ability rules and supporting captures are still pending.
 
 ## 04 — My Contributions
 
@@ -43,7 +43,7 @@ The team consisted of one designer and two programmers, without a dedicated art 
 
 > **TODO:** Add a representative mechanic or map decision after the project documents have been matched and checked. Explain the problem, options, decision, reasoning, and trade-offs using the actual project materials.
 
-Specific character abilities, interaction permissions, and weight rules are not asserted in this draft while that attribution is unresolved.
+The two-input structure gives the player different responsibilities to coordinate. Exact ability rules, a representative puzzle, and the trade-offs behind its layout will be added with the project materials.
 
 ## 06 — Prototype & Iteration
 
@@ -57,8 +57,8 @@ I worked with two programmers to follow gameplay and map designs into implementa
 
 ## 08 — Outcome & Reflection
 
-Development ended in June 2024. A more detailed account of the final build, its game jam context, and unresolved design questions will follow the supporting materials.
+The project dates to November 2025. A more detailed account of the final build and unresolved design questions will follow the supporting materials.
 
-The current page records the confirmed timeline and contribution scope without attributing an unconfirmed mechanic specification to this project.
+The intended experience centers on complementary actions. Whether the puzzles communicate those relationships effectively still needs supporting examples and actual test observations.
 
 <details><summary>Supporting materials — pending</summary><p>TODO: matching project documents, screenshots, representative map, build status and link, jam context, and one concrete design decision.</p></details>

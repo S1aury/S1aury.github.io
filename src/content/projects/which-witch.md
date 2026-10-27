@@ -6,7 +6,7 @@ role: Lead Designer
 summary: "Run a potion shop under a time limit: prepare ingredients, brew potions, fulfill orders, and invest income in upgrades while competing with rival shops."
 focus: [Game Economy, Time Management, Strategic Decision-Making, System Balancing]
 accent: violet
-year: 'Feb–Jun 2025'
+year: 'Feb–Apr 2025'
 ---
 
 ## 01 — Overview
@@ -15,7 +15,7 @@ Which Witch Is Gonna Be Rich? is a potion shop management game developed as a UC
 
 | Project context | Details |
 | --- | --- |
-| Development | February–June 2025 |
+| Development | February–April 2025 |
 | Tools / platform | Unity / Windows |
 | Distribution channel | itch.io — direct project link pending |
 | My role | Lead Designer |
