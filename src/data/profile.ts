@@ -9,7 +9,7 @@ export const profile = {
   email: "beimingxu5668@gmail.com",
   linkedin: "https://www.linkedin.com/in/beiming-xu-61318834a/",
   github: "https://github.com/S1aury",
-  resume: "", // The actual PDF has not been received in this chat.
+  resume: "resume/beiming-xu-resume-en.pdf",
 };
 export const otherProjects = ["Humanize", "StarHaven", "Inspiration.zip / 灵感.zip", "Multiplayer survival project"];
 export const otherProjectDetails: Record<string, { summary: string; role: string; status: string }> = {
