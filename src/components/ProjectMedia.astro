@@ -3,7 +3,7 @@ import { local } from '../lib/paths';
 interface Props { title: string; accent: string; image?: string; imageAlt?: string; index?: number }
 const { title, accent, image, imageAlt, index = 1 } = Astro.props;
 ---
-<div class:list={['project-media', accent]}>
+<div class:list={['project-media', accent, { 'has-capture': Boolean(image) }]}>
   {image ? <img src={local(image)} alt={imageAlt || `${title} — gameplay screenshot`} loading="lazy" width="1440" height="900" /> :
     <div class="placeholder">
       <span class="media-top">PROJECT ARCHIVE <span>0{index}</span></span>
