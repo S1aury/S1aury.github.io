@@ -1,64 +1,81 @@
 ---
 title: Waltz of Weights
 order: 3
-genre: Puzzle design project
+genre: Puzzle game
 role: Lead Designer
-summary: "A Unity project focused on gameplay design, map design and construction, and collaboration with programmers to bring the design into the game."
-focus: [Puzzle Design, Level Design, Mechanic Design, Player Guidance]
+summary: "Use keyboard and mouse together to solve puzzles with three levels of weight."
+focus: [Puzzle Design, Level Design, Mechanic Design]
 accent: olive
 year: 'Nov 2025'
+image: images/waltz-of-weights/level-1.webp
+imageAlt: A floating puzzle level with colored blocks, gates, and pressure plates.
 ---
 
 ## 01 — Overview
 
-Waltz of Weights was developed in November 2025 for a MiHoyo game jam. The project used Unity and targeted Windows.
+A single-player puzzle game made in Unity for a MiHoyo game jam. The keyboard controls the character, while the mouse interacts with the level and changes the character’s weight.
 
-| Project context | Details |
+| Project | Details |
 | --- | --- |
-| My involvement | November 2025 |
-| Tools / platform | Unity / Windows |
+| Date | November 2025 |
+| Platform | Windows / Unity |
 | Team | One designer and two programmers |
 | My role | Lead Designer |
 
-## 02 — Design Challenge
+## 02 — Gameplay Demo 1
 
-My work covered gameplay design, map design and construction, and coordination with programmers during implementation.
+<figure>
+<video controls playsinline preload="none" poster="../../images/waltz-of-weights/level-1.webp" aria-label="Waltz of Weights gameplay demo 1">
+<source src="../../videos/waltz-of-weights/demo-1.mp4" type="video/mp4" />
+<a href="../../videos/waltz-of-weights/demo-1.mp4">Watch gameplay demo 1</a>
+</video>
+<figcaption>A level with separated platforms, movable blocks, and colored gates.</figcaption>
+</figure>
 
-For the jam theme “Dance with the World,” I interpreted dancing as coordination and complementarity. WASD and the mouse take different responsibilities, creating a single-player puzzle experience built around coordinating two inputs.
+## 03 — Weight & Controls
 
-## 03 — Design Goals & Constraints
+The character and cursor have different weights:
 
-The team consisted of one designer and two programmers, without a dedicated art role. The case study will focus on how gameplay and map design were developed within that team structure.
+| Weight | State |
+| --- | --- |
+| Heavy · Red | The cursor possesses the character. |
+| Medium · Yellow | The character is not possessed. |
+| Light · Blue | The cursor acts on its own. |
 
-The design intent was to make challenges depend on timing, complementary abilities, and spatial judgment, emphasizing understanding and coordination rather than reaction speed. Detailed ability rules and supporting captures are still pending.
+Heavier weights can affect lighter ones. The puzzles combine this rule with blocks and pressure plates.
 
-## 04 — My Contributions
+- **Keyboard:** move the character; press F to push a box and R to restart.
+- **Mouse:** hold a blue pressure plate, or select a blue box and drag its arrows.
+
+## 04 — Gameplay Demo 2
+
+<figure>
+<video controls playsinline preload="none" poster="../../images/waltz-of-weights/level-2.webp" aria-label="Waltz of Weights gameplay demo 2">
+<source src="../../videos/waltz-of-weights/demo-2.mp4" type="video/mp4" />
+<a href="../../videos/waltz-of-weights/demo-2.mp4">Watch gameplay demo 2</a>
+</video>
+<figcaption>A second level brings all three weight colors into the same puzzle.</figcaption>
+</figure>
+
+## 05 — Level Design
+
+I designed and built the maps around coordinating the character and cursor. The intended challenge is to work out which input and weight to use, rather than rely on quick reactions.
+
+<figure>
+<a href="../../images/waltz-of-weights/level-3.webp"><img src="../../images/waltz-of-weights/level-3.webp" alt="A pink floating level with raised paths and red, yellow, and blue puzzle objects." loading="lazy" width="2560" height="1440" /></a>
+<figcaption>An additional level with raised paths and objects at different heights.</figcaption>
+</figure>
+
+## 06 — Design Direction
+
+For the jam theme “Dance with the World,” I focused on coordination: two inputs with different abilities, used together by one player.
+
+## 07 — My Contribution
 
 - Led gameplay design.
-- Designed and built maps.
-- Followed design implementation through with the programmers.
-- Coordinated design and programming work within the small team.
+- Designed and built the maps.
+- Worked with two programmers to implement the mechanics and levels.
 
-## 05 — Design Decisions
+## 08 — Further Details
 
-> **TODO:** Add a representative mechanic or map decision after the project documents have been matched and checked. Explain the problem, options, decision, reasoning, and trade-offs using the actual project materials.
-
-The two-input structure gives the player different responsibilities to coordinate. Exact ability rules, a representative puzzle, and the trade-offs behind its layout will be added with the project materials.
-
-## 06 — Prototype & Iteration
-
-> **TODO:** Add an actual prototype or map revision, what motivated it, and any recorded test observations. No test result or learning outcome has been supplied.
-
-## 07 — Production & Collaboration
-
-I worked with two programmers to follow gameplay and map designs into implementation. This collaboration is part of my Lead Designer contribution.
-
-> **TODO:** Add one concrete design handoff or implementation discussion, including the specification and how the team resolved the issue.
-
-## 08 — Outcome & Reflection
-
-The project dates to November 2025. A more detailed account of the final build and unresolved design questions will follow the supporting materials.
-
-The intended experience centers on complementary actions. Whether the puzzles communicate those relationships effectively still needs supporting examples and actual test observations.
-
-<details><summary>Supporting materials — pending</summary><p>TODO: matching project documents, screenshots, representative map, build status and link, jam context, and one concrete design decision.</p></details>
+<details><summary>Iteration and testing — to be added</summary><p>Specific layout changes, design trade-offs, and playtest observations have not yet been documented here.</p></details>
