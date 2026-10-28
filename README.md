@@ -27,7 +27,7 @@ npm run preview
 ## 结构
 
 ```text
-src/content/projects/  四个 Markdown 案例；frontmatter 管理卡片信息
+src/content/projects/  五个 Markdown 案例；frontmatter 管理卡片信息
 src/content.config.ts  内容字段与校验
 src/data/profile.ts    已确认的个人信息、联系方式和其他项目名称
 src/pages/             首页、案例动态静态生成路由、404
@@ -44,7 +44,7 @@ scripts/               构建产物检查
 
 ## 页面与设计
 
-首页：Hero → Internship → Selected Projects / Other Projects → Design Thinking → Production → Experience → About / Contact。四个案例分别位于 `/projects/hell-or-sell/`、`/projects/which-witch/`、`/projects/waltz-of-weights/`、`/projects/ratoolight/`。
+首页：Hero → Internship → Selected Projects / Other Projects → Design Thinking → Production → Experience → About / Contact。五个案例分别位于 `/projects/hell-or-sell/`、`/projects/which-witch/`、`/projects/waltz-of-weights/`、`/projects/ratoolight/`、`/projects/humanize/`。
 
 暖白纸感、深色文字、橙色强调；不使用第三方字体或重型动画。CSS 几何占位与真实素材明确区分。菜单使用原生 details，关闭 JavaScript 仍能导航与阅读。支持键盘焦点、跳过导航和减少动态效果。
 

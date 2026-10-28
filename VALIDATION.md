@@ -69,3 +69,9 @@
 - Astro check 无错误或警告；六页构建与链接/资源检查通过。
 - 390px 手机布局无横向溢出，视频与文字显示正常。
 - 简介精简，规则来自用户截图；未补写未经提供的测试结论。
+
+## Humanize / Which Witch 更新（2026-10-27）
+- Humanize 升为第四个独立案例，Which Witch 顺延第五；前三项不变。
+- 五张截图和两段 Humanize 视频已接入；两段实际播放正常，时长约 3.32 秒与 8.99 秒。
+- 两个 itch 页面已在浏览器核对：Rat 有下载入口，Which Witch 有 Run game 入口和 Beiming Xu 的 Design 署名。
+- Astro check 无错误/警告，七页构建与五个案例资源检查通过；两页在 390px 宽度下无横向溢出。
