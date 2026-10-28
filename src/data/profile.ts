@@ -11,13 +11,9 @@ export const profile = {
   github: "https://github.com/S1aury",
   resume: "resume/beiming-xu-resume-en.pdf",
 };
-export const otherProjects = ["Humanize", "StarHaven", "Inspiration.zip / 灵感.zip", "Multiplayer survival project"];
+export const otherProjects = ["StarHaven", "Inspiration.zip / 灵感.zip", "Multiplayer survival project"];
 export const otherProjectDetails: Record<string, { summary: string; role: string; status: string }> = {
-  Humanize: {
-    summary: "A short game about posing as a human and controlling your facial features at the right moments to avoid detection. Distorted expressions and awkward timing create a humorous experience.",
-    role: "Lead Designer · Theme-driven mechanics and implementation follow-through",
-    status: "Completed game jam project · One-week development",
-  },
+
 };
 
 export const internship: {
