@@ -23,7 +23,7 @@ export const otherProjectDetails: Record<string, { summary: string; role: string
 export const internship: {
   company: string; project: string; role: string; dates: string; location: string;
   summary: string; responsibilities: string[];
-  activities: { title: string; summary: string; contribution: string }[];
+  activities: { title: string; summary: string; images: { src: string; alt: string; caption: string }[] }[];
 } = {
   company: "MiHoyo",
   project: "Genshin Impact",
@@ -37,5 +37,25 @@ export const internship: {
     "Supported configuration, functional testing, issue reporting, and follow-up against design specifications.",
     "Worked with the team to refine mechanics using player-experience considerations and internal test feedback.",
   ],
-  activities: [], // Named modes and specific participation details are not approved for public display.
+  // Public screenshots supplied after the user confirmed HR permission. No internal process details.
+  activities: [
+    {
+      title: "Live Event Gameplay",
+      summary: "Publicly released event gameplay, shown through combat and boss encounters.",
+      images: [
+        { src: "images/internship/live-event-waves.webp", alt: "Genshin Impact event combat with enemy-wave progress, a timer, and character upgrades.", caption: "Event gameplay · Wave encounter" },
+        { src: "images/internship/live-event-boss.webp", alt: "Genshin Impact event boss encounter with projectile patterns and a character health display.", caption: "Event gameplay · Boss encounter" },
+      ],
+    },
+    {
+      title: "UGC & Multiplayer Content",
+      summary: "A public view of the user-generated stage browser, including collaboration, party, and competitive multiplayer categories.",
+      images: [{ src: "images/internship/ugc-browser.webp", alt: "Genshin Impact user-generated stage browser showing player-created stages and category labels.", caption: "UGC · Public stage browser" }],
+    },
+    {
+      title: "GCG · Card Gameplay",
+      summary: "A public card-match view showing character cards, supporting effects, and the player's hand.",
+      images: [{ src: "images/internship/gcg-match.webp", alt: "Genshin Impact card match with character cards, effects, and a hand of action cards.", caption: "GCG · Card match" }],
+    },
+  ],
 };
