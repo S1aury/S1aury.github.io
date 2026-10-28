@@ -10,6 +10,8 @@ year: 'Oct 2024'
 image: images/ratoolight/level-introduction.webp
 imageAlt: "RatO.oLight laboratory level with the mouse, control prompts, cheese, platforms, and colored structures."
 links:
+  - label: Download on itch.io
+    url: https://youxixo.itch.io/rat
   - label: Watch the promotional video on Bilibili
     url: https://www.bilibili.com/video/BV17W1jYhEJy/
 ---
@@ -105,8 +107,8 @@ I combined level and puzzle design with coordination across art, programming, de
 
 ## 08 — Outcome & Reflection
 
-The project was completed as a game jam work. The promotional video, level screenshots, early prototype capture, and character assets now document its presentation and playable environments. A direct build link and recorded test observations are still pending.
+The project was completed as a game jam work. The promotional video, level screenshots, early prototype capture, and character assets now document its presentation and playable environments. The downloadable build is available on itch.io. Recorded test observations are still pending.
 
 An annotated level and an actual revision will help explain how the intended learning sequence translated into the playable game. The current materials do not establish how successfully players learned the rules.
 
-<details><summary>Supporting materials still pending</summary><p>Annotated level solution and light rules, a documented iteration example, confirmed build links, test observations, and contributor attribution.</p></details>
+<details><summary>Supporting materials still pending</summary><p>Annotated level solution and light rules, a documented iteration example, test observations, and contributor attribution.</p></details>

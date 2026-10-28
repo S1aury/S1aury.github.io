@@ -1,75 +1,55 @@
 ---
 title: Which Witch Is Gonna Be Rich?
-order: 4
+order: 5
 genre: Potion shop management
 role: Lead Designer
-summary: "Run a potion shop under a time limit: prepare ingredients, brew potions, fulfill orders, and invest income in upgrades while competing with rival shops."
-focus: [Game Economy, Time Management, Strategic Decision-Making, System Balancing]
+summary: "Run a potion shop: prepare ingredients, brew potions, and complete orders before time runs out."
+focus: [Game Economy, Time Management, System Balancing]
 accent: violet
 year: 'Feb–Apr 2025'
+image: images/which-witch/shop.webp
+imageAlt: A witch in a potion shop with a countdown, currency display, and ingredient inventory.
+links:
+  - label: Play on itch.io
+    url: https://danicaj3w.itch.io/which-witch-is-gonna-be-rich
 ---
 
 ## 01 — Overview
 
-Which Witch Is Gonna Be Rich? is a potion shop management game developed as a UCI Video Game Design Club project. Players prepare ingredients, brew potions, fulfill customer orders, and use income to upgrade their shop while competing with opponents.
+A potion shop management game made with the UCI Video Game Design Club. Prepare ingredients, brew potions, fulfill orders, and spend earnings on upgrades while competing with rival shops.
 
-| Project context | Details |
+| Project | Details |
 | --- | --- |
 | Development | February–April 2025 |
-| Tools / platform | Unity / Windows |
-| Distribution channel | itch.io — direct project link pending |
+| Tools | Unity |
+| Play | [Browser version on itch.io](https://danicaj3w.itch.io/which-witch-is-gonna-be-rich) |
 | My role | Lead Designer |
 | Status | Development ended as some team members graduated |
 
-## 02 — Design Challenge
+## 02 — The Shop
 
-My design focus was preserving strategic decisions during fast-paced shop operations. Players have limited operating time, ingredients, and production capacity, so the value of an order must be considered alongside the time it takes and the options it leaves for later.
+<figure><img src="../../images/which-witch/shop.webp" alt="Potion shop gameplay with a countdown, currency, cauldron, and inventory." loading="lazy" width="964" height="587" /><figcaption>The shop view keeps the remaining time, currency, and inventory visible.</figcaption></figure>
 
-This is the design goal and decision space, not a measured account of player behavior.
+## 03 — Ingredients
 
-## 03 — Design Goals & Constraints
+<figure><img src="../../images/which-witch/ingredients.webp" alt="Ingredient selection interface showing Phoenix, Nightshade, Moonflower, and other item slots." loading="lazy" width="954" height="597" /><figcaption>Ingredient selection in the supplied build.</figcaption></figure>
 
-Operating time, available ingredients, and brewing time limit what players can accomplish. The intended experience balances immediate order income with production scheduling and investment in future shop capabilities.
+## 04 — Brewing
 
-The exact economy values and timing rules will be included only when the corresponding version is documented.
+<figure><img src="../../images/which-witch/brewing.webp" alt="Brewing interface with a liquid inventory, input slots, progress bars, and Brew button." loading="lazy" width="917" height="569" /><figcaption>The brewing interface connects available ingredients with potion production.</figcaption></figure>
 
-## 04 — My Contributions
+## 05 — Design Focus
 
-As Lead Designer, I worked on operating decisions under time pressure, game pacing, and interactions between systems. I also participated in balancing work.
+The goal was to keep strategic choices meaningful during fast-paced shop work: which orders to prioritize, how to use limited ingredients, and when to spend on upgrades.
 
-My design materials cover the management loop, orders, potion production, and upgrades. Specific approved excerpts are still pending.
+## 06 — My Contribution
 
-## 05 — Design Decisions
+As Lead Designer, I worked on the management loop, game pacing, interactions between systems, and balancing.
 
-### Read the shop as connected choices
+## 07 — Team Project
 
-| Design area | Decision involved |
-| --- | --- |
-| Ingredients | Allocate limited materials across possible production choices |
-| Potion production | Consider preparation and brewing time alongside order rewards |
-| Orders | Decide what to prioritize within the remaining operating time |
-| Upgrades | Compare immediate spending with later operating capability |
+This was a UCI Video Game Design Club project. The itch.io page lists Beiming Xu under Design; full team credits are available there.
 
-This table describes the intended decision space. A specific historical rule choice and the alternatives considered have not yet been documented here.
+## 08 — Further Details
 
-> **TODO:** Add one actual pacing or balancing decision, its original and revised values where available, and the reason for the change.
-
-## 06 — Prototype & Iteration
-
-My work included pacing and system balancing. The current materials do not include specific parameter revisions or recorded player observations.
-
-> **TODO:** Add a before-and-after comparison and distinguish design expectations from actual test findings. No performance or engagement metrics are claimed.
-
-## 07 — Production & Collaboration
-
-The game was a UCI Video Game Design Club team project. My confirmed role was Lead Designer; I do not attribute the whole team's development or production work to myself.
-
-> **TODO:** Add a concrete collaboration example with clear ownership and supporting material.
-
-## 08 — Outcome & Reflection
-
-Development ran from February to June 2025 and ended as some team members graduated. That endpoint does not establish that every planned feature was completed.
-
-The project provides material for discussing management decisions, pacing, and system balancing. A reflection on a specific iteration will be added once its details and observations are available.
-
-<details><summary>Supporting materials — pending</summary><p>TODO: screenshots, confirmed itch.io URL, design excerpts, pacing or economy revisions, and any recorded test observations.</p></details>
+<details><summary>Design iterations — to be added</summary><p>Specific economy and timing changes, their reasons, and recorded playtest observations will be added when available.</p></details>
