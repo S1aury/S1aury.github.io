@@ -54,6 +54,7 @@ for (const slug of [
   "which-witch",
   "waltz-of-weights",
   "ratoolight",
+  "humanize",
 ]) {
   const html = await readFile(
     path.join(root, "projects", slug, "index.html"),
@@ -67,5 +68,5 @@ if (failures.length) {
   process.exit(1);
 }
 console.log(
-  `PASS: ${files.length} HTML pages; internal links, anchors, assets, metadata, and four case study structures. Base: ${base || "/"}`,
+  `PASS: ${files.length} HTML pages; internal links, anchors, assets, metadata, and five case study structures. Base: ${base || "/"}`,
 );
