@@ -11,7 +11,7 @@ export const profile = {
   github: "https://github.com/S1aury",
   resume: "resume/beiming-xu-resume-en.pdf",
 };
-export const otherProjects = ["StarHaven", "Inspiration.zip / 灵感.zip", "Multiplayer survival project"];
+export const otherProjects = ["Multiplayer survival project"];
 export const otherProjectDetails: Record<string, { summary: string; role: string; status: string }> = {
 
 };
