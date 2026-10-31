@@ -78,3 +78,6 @@ Other Projects 只是资料待整理的名称列表，位于 `profile.ts` 的 `o
 
 ## 文案层次（2026-10-27）
 首页用简短、直观的一句话说明玩法；进入项目后逐步展示机制、演示和设计细节。避免重复职责、复杂措辞和冗长占位说明。Waltz 已先采用此结构，其余文案等待本人审查。
+
+## 职业定位（2026-10-30）
+本人确认主定位为 Systems Designer，次定位为 Project Manager（不是 Product Manager）。首页突出专业方向，姓名缩小，Game Design Portfolio 保持清晰可见；具体项目中已确认的 Producer 职责保留。
