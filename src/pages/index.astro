@@ -17,7 +17,7 @@ const steps = ['Problem','Analysis','Design','Prototype','Playtest','Iteration']
   </section>
   <section id="internship" class="internship-section section" aria-labelledby="internship-title"><div class="wrap">
     <div class="section-heading"><p class="eyebrow">01 / INDUSTRY EXPERIENCE</p><h2 id="internship-title">Internship</h2><p>Activities and responsibilities from my game systems design internship.</p></div>
-    <div class="internship-heading"><div><h3>{internship.company}</h3><p class="internship-role">{internship.role}</p><p class="internship-project">Project · {internship.project}</p><p class="internship-project">{internship.location}</p></div><p class="pending">{internship.dates || 'Dates · TODO'}</p></div>
+    <div class="internship-heading"><img class="internship-logo" src={local('images/internship/mihoyo-logo.webp')} alt="MiHoyo — Tech Otakus Save the World" width="889" height="415" /><div class="internship-identity"><h3>{internship.company}</h3><p class="internship-role">{internship.role}</p><p class="internship-project">Project · {internship.project}</p><p class="internship-project">{internship.location}</p></div><p class="pending">{internship.dates || 'Dates · TODO'}</p></div>
     <div class="internship-details">
       <div><p class="eyebrow">MY RESPONSIBILITIES</p>{internship.responsibilities.length ? <ul>{internship.responsibilities.map(item => <li>{item}</li>)}</ul> : <p class="pending">TODO · Specific responsibilities and individual contributions to be added.</p>}</div>
       <div><p class="eyebrow">DESIGN & COLLABORATION</p><p class="internship-summary">{internship.summary}</p></div>
@@ -45,8 +45,9 @@ const steps = ['Problem','Analysis','Design','Prototype','Playtest','Iteration']
     <div class="production-grid"><div class="production-feature"><p class="eyebrow">PROJECT CONTEXT / RATO.OLIGHT</p><h3>Designing puzzles.<br />Coordinating people.</h3><p>As Lead Designer / Project Manager, I worked on level and puzzle design and coordinated members across disciplines.</p><a class="text-link" href={local('projects/ratoolight/')}>View project context ↗</a></div><div class="production-list">{[['01','Scope & priorities','Hell or Sell: when complex features exceeded implementation capacity, I adjusted scope and direction. The next design proposal reuses existing systems to explore a different pace of play.'],['02','Cross-disciplinary coordination','RatO.oLight: I coordinate design, programming, art, and audio work alongside level and puzzle design. A specific handoff example will be added.'],['03','Documentation & risk','Hell or Sell: my design work includes system diagrams and rules for the core loop and progression. These help communicate the intended design; approved excerpts are pending.']].map(([n,t,d])=><div><span>{n}</span><div><h3>{t}</h3><p>{d}</p></div></div>)}</div></div>
   </section>
   <section id="experience" class="wrap section" aria-labelledby="experience-title"><div class="section-heading compact"><p class="eyebrow">05 / EXPERIENCE</p><h2 id="experience-title">A foundation in design.</h2></div>
+    <div class="experience-row"><span>INTERNSHIP</span><div><h3>{internship.company} · {internship.project}</h3><p>{internship.role}</p><p class="pending">{internship.dates}</p></div><a class="text-link" href="#internship">Internship details ↗</a></div>
     <div class="experience-row"><span>EDUCATION</span><div><h3>University of California, Irvine</h3><p>B.S. Game Design and Interactive Media</p></div><span class="pending">{profile.educationDates}</span></div>
-    <div class="experience-row"><span>TEAM PROJECT / 2024</span><div><h3>RatO.oLight</h3><p>Lead Designer / Project Manager · Level & puzzle design</p></div><a class="text-link" href={local('projects/ratoolight/')}>Case study ↗</a></div>
+    {projects.map(project => <div class="experience-row"><span>TEAM PROJECT</span><div><h3>{project.data.title}</h3><p>{project.data.role}</p><p class="pending">{project.data.year}</p></div><a class="text-link" href={local(`projects/${project.id}/`)}>Case study ↗</a></div>)}
   </section>
   <section id="contact" class="contact-section section" aria-labelledby="contact-title"><div class="wrap"><p class="eyebrow">06 / ABOUT & CONTACT</p><div class="contact-grid"><div><h2 id="contact-title">Good games begin<br />with meaningful<br /><em>decisions.</em></h2></div><div><p class="about-copy">{profile.about}</p><p>I build gameplay and progression systems, plan how players learn mechanics, and translate design goals into documentation, implementation rules, and team tasks.</p><div class="contact-links">{profile.email ? <a href={`mailto:${profile.email}`}>Email ↗</a> : <span>Email <small>TODO · address pending</small></span>}{profile.linkedin ? <a href={profile.linkedin}>LinkedIn ↗</a> : <span>LinkedIn <small>TODO · link pending</small></span>}<a href={profile.github}>GitHub ↗</a>{profile.resume ? <a href={local(profile.resume)}>Resume PDF ↗</a> : <span>Resume PDF <small>TODO · file pending</small></span>}</div></div></div></div></section>
 </Layout>
@@ -54,6 +55,8 @@ const steps = ['Problem','Analysis','Design','Prototype','Playtest','Iteration']
 <style>
   .internship-section { background: #eceae1; }
   .internship-heading { display: flex; align-items: start; justify-content: space-between; gap: 24px; padding: 28px 0; border-block: 1px solid var(--line); }
+  .internship-logo { width: 220px; max-width: 100%; height: auto; flex-shrink: 0; }
+  .internship-identity { flex: 1; }
   .internship-heading h3 { font-size: clamp(32px, 3.6vw, 48px); margin-bottom: 12px; }
   .internship-role { color: var(--orange); font-size: 15px; margin: 0; }
   .internship-project { color: var(--muted); font-size: 14px; margin: 10px 0 0; }
@@ -65,8 +68,8 @@ const steps = ['Problem','Analysis','Design','Prototype','Playtest','Iteration']
   .internship-gallery { border-top: 1px solid var(--line); padding: 34px 0; }
   .internship-gallery-heading h3 { font-size: clamp(25px, 3vw, 36px); margin: 12px 0; }
   .internship-gallery-heading > p:last-child { max-width: 720px; font-size: 15px; color: var(--muted); margin-bottom: 24px; }
-  .internship-captures { max-width: 900px; }
-  .internship-captures.paired { max-width: none; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .internship-captures { width: calc((100% - 24px) / 2); }
+  .internship-captures.paired { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
   .internship-captures figure { margin: 0; min-width: 0; }
   .internship-captures a { display: block; }
   .internship-captures img { width: 100%; height: auto; display: block; }
@@ -80,7 +83,9 @@ const steps = ['Problem','Analysis','Design','Prototype','Playtest','Iteration']
   .experience-row > span:last-child { max-width: 190px; }
   .internship-note { color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 20px; margin: 0; }
   @media(max-width: 700px) {
+    .internship-captures { width: 100%; }
     .internship-captures.paired { grid-template-columns: 1fr; }
+    .internship-logo { width: 180px; }
     .internship-heading { flex-direction: column; gap: 14px; }
     .internship-heading > .pending { margin: 0; }
     .internship-details { grid-template-columns: 1fr; gap: 30px; }
