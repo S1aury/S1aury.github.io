@@ -1,8 +1,8 @@
 // Public portfolio content confirmed by Beiming Xu. Keep unapproved details out of this repository.
 export const profile = {
   name: "Beiming Xu",
-  title: "Game Designer | Producer",
-  intro: "I design connected game systems, build levels around how players learn, and turn design goals into rules and tasks a team can execute.",
+  title: "Systems Designer | Project Manager",
+  intro: "I design gameplay systems and coordinate teams to turn ideas into playable games.",
   education: "B.S. Game Design and Interactive Media · University of California, Irvine",
   educationDates: "Sep 2023 – Expected Mar 2027",
   about: "I'm Beiming Xu, a Game Design and Interactive Media undergraduate at UC Irvine. My work focuses on systems design, level design, and project management. I contributed to systems design work on Genshin Impact at MiHoyo and have served as Lead Designer and Project Manager on student projects.",
