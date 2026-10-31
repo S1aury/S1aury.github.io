@@ -42,5 +42,6 @@
 - [ ] 真实的设计备选、取舍及协作例子。
 - [ ] 有记录才引用测试人数、评价或结果，没有记录则保持未验证。
 
-StarHaven、Inspiration.zip / 灵感.zip、多人求生项目仍仅预留名称。素材未提供时继续使用明确标注的抽象占位。
+StarHaven 和 Inspiration.zip / 灵感.zip 已按本人要求从首页移除。仅保留 Multiplayer survival project，等待后续 demo 和图片；未来排序尚未确定。
+
 
