@@ -16,6 +16,6 @@ const p = project.data;
     <p class="role">{p.role}</p>
     <p>{p.summary}</p>
     <ul class="tags" aria-label="Design focus">{p.focus.map(f => <li>{f}</li>)}</ul>
-    <a class="text-link" href={local(`projects/${project.id}/`)}>View case study <span aria-hidden="true">↗</span></a>
+    <a class="text-link" href={local(`projects/${project.id}/`)}>{p.tier === 'main' ? 'View case study' : 'View project'} <span aria-hidden="true">↗</span></a>
   </div>
 </article>
