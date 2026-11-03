@@ -26,7 +26,7 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
     <a class="wordmark" href={local()} aria-label="Beiming Xu home">BX<span>.</span></a>
     <details class="mobile-menu"><summary>Menu</summary><nav aria-label="Mobile navigation">{nav.map(([id,label]) => <a href={`${local()}#${id}`}>{label}</a>)}</nav></details>
     <nav class="desktop-nav" aria-label="Main navigation">{nav.map(([id,label]) => <a href={`${local()}#${id}`} data-section={home ? id : undefined}>{label}</a>)}</nav>
-    <span class="header-note">SYSTEMS DESIGN & PROJECT MANAGEMENT</span>
+    <span class="header-note">SYSTEMS, GAMEPLAY & LEVEL DESIGN</span>
   </header>
   <main id="main"><slot /></main>
   <footer class="site-footer"><a href={local()}>Beiming Xu</a><span>{profile.title}</span><a href="#main">Back to top ↑</a></footer>
