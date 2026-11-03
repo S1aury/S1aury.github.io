@@ -7,6 +7,7 @@ const projects = defineCollection({
   schema: z.object({
     title: z.string(),
     order: z.number(),
+    tier: z.enum(["main", "supporting"]),
     genre: z.string(),
     role: z.string(),
     summary: z.string(),
