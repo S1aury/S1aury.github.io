@@ -84,3 +84,32 @@
 ## 首页职业定位（2026-10-30）
 - 首屏突出 Systems Designer 与 Project Manager，放大 Portfolio 标签并缩小姓名；页脚及页面标题同步。
 - 桌面和 390px 手机首屏已目视检查，无横向溢出；Astro 检查及七页构建/资源验证通过。
+
+## 2026-11-03 — Content revision (local, not deployed)
+
+- Updated homepage positioning, miHoYo work, five project narratives, project tiers, and confirmed roles/team sizes/durations using the user's revision brief.
+- Retained routes, navigation, existing media, dependencies, and deployment configuration. Allowed the longer hero title to wrap; added local typography for the TCG narrative.
+- `npm run check`: 0 errors, 0 warnings, 0 hints.
+- `npm run build`: 7 pages generated.
+- `npm run verify`: passed internal links, anchors, assets, metadata, and five case structures.
+- Compared source references: all 34 original case-media and link references retained.
+- Browser QA: desktop homepage; mobile homepage and all five cases at 390px; no horizontal overflow after the hero wrapping fix. Project navigation opened RatO.oLight correctly.
+- Original resume PDF unchanged. Dates agree for the internship; several project role labels remain older than the revised website. Missing exact itch.io URLs were not guessed. No gameplay playtest or public deployment was performed in this task.
+
+## 2026-11-03 — Approved publication update
+
+- User explicitly approved publishing the revised content to S1aury.github.io.
+- Added the user-supplied Humanize itch.io download page; Hell or Sell and Waltz of Weights links remain unfilled until supplied.
+- Replaced public/resume/beiming-xu-resume-en.pdf byte-for-byte with the supplied Beiming Xu Resume 11. Ed (1).pdf; inspected the one-page PDF render.
+- Re-ran check (0 errors/warnings/hints), build (7 pages), and verify (passed). No framework or dependency changes.
+- Remote main still matched the revision baseline before publication. Deployment outcome is verified separately after the commit is published.
+
+### Publication blocker
+
+The approved source update was committed locally, but was not pushed or deployed. The GitHub connector rejected blob creation with HTTP 403 (Resource not accessible by integration). Native Git and the bundled Git both failed to launch their configured credential manager because the shell process could not create its MSYS named object (0xC0000022); noninteractive push then had no credentials. No permissions, authentication settings, or deployment settings were changed. Restore an authorized write-capable connection to S1aury/S1aury.github.io, then publish the existing approved commit and verify the Pages deployment; do not request content approval again.
+
+## 2026-11-03 修订包同步
+- 新版简历与用户单独提供的 PDF 字节一致；一页渲染检查正常，未修改 PDF 内容。
+- Humanize itch.io 页面已核对，下载链接已接入。
+- Astro check：0 errors / 0 warnings；7 页静态构建与链接、资源、五个案例结构验证通过。
+- 桌面及 390px 手机首屏已检查，未见横向溢出；保留现有媒体和部署配置。
