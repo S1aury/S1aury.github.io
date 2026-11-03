@@ -2,9 +2,9 @@
 title: RatO.oLight
 order: 2
 genre: 2D exploration & puzzle platformer
-role: Project Manager / Lead Designer
-summary: "Explore a laboratory as a small mouse, learn how light changes objects, and use that knowledge to solve puzzles and find a way out."
-focus: [Level Design, Puzzle Design, Difficulty Progression, Team Leadership]
+role: Lead Game Designer / Level Designer
+summary: "Light-based environmental puzzles across 10 rooms I built in Unity. I redirected the gameplay toward discovery and structured how players learn and combine mechanics."
+focus: [Light-Based Puzzles, 10 Built Levels, Player Learning, Unity Level Building]
 accent: blue
 year: 'Oct 2024'
 image: images/ratoolight/level-introduction.webp
@@ -14,22 +14,20 @@ links:
     url: https://youxixo.itch.io/rat
   - label: Watch the promotional video on Bilibili
     url: https://www.bilibili.com/video/BV17W1jYhEJy/
+tier: main
 ---
 
 ## 01 — Overview
 
-RatO.oLight is a 2D platforming and exploration-puzzle game. Players control a small mouse that wakes in a laboratory, searches for cheese, learns how different lighting affects objects, and looks for a way out.
+RatO.oLight is a puzzle-platformer about a mouse exploring a laboratory where lighting changes how environmental objects behave. As the project's only Game Designer, I designed the gameplay and built all 10 puzzle rooms in Unity.
 
-Its progression uses knowledge gates: understanding the world's rules opens further possibilities for exploration.
-
-| Project context | Details |
+| Project | Details |
 | --- | --- |
-| Development | October 2024 |
-| Status | Completed game jam project |
-| Jam / duration | Spotlight Game Jam / three weeks |
+| Development | October 2024 · Three-week Spotlight Game Jam |
 | Tools / platforms | Unity / Windows and Mac |
-| Team | Approximately 8 people |
-| My role | Project Manager / Lead Designer |
+| Team | 8 people |
+| My role | Lead Game Designer / Level Designer |
+| Delivered | Released on itch.io · Approximately 15 minutes to complete |
 
 <figure>
 <video controls playsinline preload="none" poster="../../images/ratoolight/level-introduction.webp" aria-label="RatO.oLight promotional video">
@@ -39,33 +37,29 @@ Its progression uses knowledge gates: understanding the world's rules opens furt
 <figcaption>RatO.oLight promotional video, supplied with the project materials. Also available on <a href="https://www.bilibili.com/video/BV17W1jYhEJy/">Bilibili</a>.</figcaption>
 </figure>
 
-## 02 — Design Challenge
+## 02 — Original Problem
 
-The level-design goal was to help players understand light-dependent object behavior through the environment, then apply that knowledge in later puzzles and exploration.
+The initial concept was an intensive parkour/platformer built around light and shadow. It depended on substantial programming work and finely tuned platforming levels, which did not fit the three-week development window.
 
-This describes the intended design challenge. Specific examples of player misunderstanding or difficulty have not yet been documented for this case study.
+When I took over the main design work, I wanted to preserve the light-and-shadow theme while finding a form the team could complete.
 
-## 03 — Design Goals & Constraints
+## 03 — My Decision: Change What Light Does
 
-Later puzzles need to build on rules the player has already had an opportunity to learn. My level and difficulty work focused on the relationship between introducing a rule and asking the player to use it.
+I shifted light from primarily changing the player's movement path to changing the behavior of environmental objects. That moved the project toward environmental interaction and puzzle solving.
 
-The three-week game jam required design and production work to progress together across art, programming, design, and audio. My production role ran alongside level construction and difficulty planning.
+The theme stayed intact, but the central challenge became understanding and applying rules. The intended reward was the satisfaction of discovering how something works and using that knowledge to move forward.
 
-## 04 — My Contributions
+## 04 — Gameplay Design Ownership
 
-- Designed level structure and puzzle logic.
-- Worked on difficulty progression and the order in which players encounter puzzle requirements.
-- Coordinated art, programming, design, and audio members as Project Manager.
+I designed the core mechanics, controls, player abilities, puzzle logic, win conditions, and UI requirements. I also defined tutorial structure, level progression, and difficulty progression so the rooms could build on one another.
 
-The gameplay captures show the team's build. Individual asset credits and an annotated breakdown of my level work are still being assembled.
+The design work connected a player's immediate action—moving, collecting, or interacting—with the next rule they needed to understand.
 
-## 05 — Design Decisions
+## 05 — Player Learning through Levels
 
-### Connect learning with exploration
+I structured progression around basic movement, item collection, environmental interaction, light-based mechanics, and combinations of previously learned mechanics.
 
-Light-dependent behavior supplies the rules players need to understand. Knowledge-gated progression makes that understanding relevant beyond an isolated puzzle.
-
-My level-design focus was how to arrange that learning and subsequent application. The supplied level captures provide concrete layouts for discussing that work.
+Basic control prompts are visible in the game. For the puzzle rules themselves, I relied on room layout, object placement, and interaction feedback rather than lengthy written explanations. The goal was to give players opportunities to discover a rule before asking them to combine it with another.
 
 <figure>
 <img src="../../images/ratoolight/level-introduction.webp" width="941" height="530" loading="lazy" alt="Laboratory layout with control prompts, wooden platforms, cheese, a crate, and red, green, and blue structures." />
@@ -77,16 +71,18 @@ My level-design focus was how to arrange that learning and subsequent applicatio
 <figcaption>A second level view places a green-lit block and switch to the left, elevated cheese near the center, and a vertical blue structure ahead of the mouse.</figcaption>
 </figure>
 
-> **TODO:** Annotate one of these layouts with the light rules, intended solution, learning sequence, and reasoning behind a specific design decision.
+## 06 — Building All 10 Rooms in Unity
 
-## 06 — Prototype & Iteration
-
-I iterated on level structure and puzzle logic during development. The supplied materials include an early Unity capture and the later laboratory scenes shown above.
+I personally built every puzzle room using sprite sheets, prefabs, triggers, and object placement. This let me carry the mechanics and progression directly into playable spaces, including the placement of interactable objects and the sequence of challenges.
 
 <figure style="max-width:464px">
 <img src="../../images/ratoolight/early-prototype.webp" width="464" height="240" loading="lazy" alt="Early Unity prototype showing the mouse above a block on a simple ground platform against a plain background." />
-<figcaption>Early prototype capture. A documented rule or layout revision is still needed for a direct iteration comparison.</figcaption>
+<figcaption>An early Unity prototype, before the later laboratory presentation.</figcaption>
 </figure>
+
+## 07 — Working within Three Weeks
+
+Redirecting the concept reduced dependence on demanding platforming features and precision level production. I coordinated with programming, art, and audio while keeping the design centered on light-based object behavior and the 10-room progression.
 
 <figure>
 <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
@@ -97,18 +93,8 @@ I iterated on level structure and puzzle logic during development. The supplied 
 <figcaption>Character artwork and two original animated sprites from the project's supplied assets.</figcaption>
 </figure>
 
-> **TODO:** Supply a concrete before-and-after example, the reason for the change, and recorded observations. No completion rate or measured improvement is claimed.
+## 08 — Delivered Experience
 
-## 07 — Production & Collaboration
+The eight-person team completed and released a fully finishable game in three weeks, with approximately 15 minutes of play. My contribution covered the gameplay rules, the learning sequence, and hands-on construction of all 10 rooms.
 
-I combined level and puzzle design with coordination across art, programming, design, and audio. This role required keeping the design work connected to what different members needed to implement.
-
-> **TODO:** Add one specific handoff, coordination issue, or scope decision and describe my action and the documented result.
-
-## 08 — Outcome & Reflection
-
-The project was completed as a game jam work. The promotional video, level screenshots, early prototype capture, and character assets now document its presentation and playable environments. The downloadable build is available on itch.io. Recorded test observations are still pending.
-
-An annotated level and an actual revision will help explain how the intended learning sequence translated into the playable game. The current materials do not establish how successfully players learned the rules.
-
-<details><summary>Supporting materials still pending</summary><p>Annotated level solution and light rules, a documented iteration example, test observations, and contributor attribution.</p></details>
+The project demonstrates how I preserve a core creative idea while changing its gameplay demands to fit a team—and how I turn that direction into levels players can explore.

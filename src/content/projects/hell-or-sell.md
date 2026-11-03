@@ -2,112 +2,89 @@
 title: Hell or Sell
 order: 1
 genre: Inventory & economy
-role: Producer / Lead Designer / Project Manager
-summary: "Arrange shaped items in a limited inventory, then switch to a selling phase. A planned refactor explores timed combo clearing using the existing systems."
-focus: [System Design, Inventory Management, Game Economy, Level Design, Production]
+role: Producer / Lead Game Designer
+summary: "Inventory systems and a shop economy built around spatial choices. I led design and production, shifting complexity into inventory shapes and level constraints."
+focus: [Inventory Systems, Game Economy, Spatial Constraints, Production Leadership]
 accent: rust
 year: 'Since Sep 2025'
 image: images/hell-or-sell/inventory-shop.webp
 imageAlt: "Current Hell or Sell build: shaped items in an irregular inventory beside shop choices and upgrades."
+tier: main
 ---
 
 ## 01 — Overview
 
-Hell or Sell currently uses two phases: players place items in a limited inventory, then switch phases to sell them. Item shapes and combinations connect spatial planning with the shop economy.
+Hell or Sell connects spatial inventory decisions with a shop economy: players arrange shaped items in limited space, then switch to a selling phase. I designed the core loop and its connected systems while leading production for a 12-person team.
 
-I am planning a refactor that retains the existing gameplay while exploring a different experience through the same systems: timed decisions, combo clearing, and space recovery. The captures below show the **current build**, not the proposed refactor.
-
-| Project context | Details |
+| Project | Details |
 | --- | --- |
 | Development | September 2025–present |
-| Current status | Existing build; refactor direction planned |
 | Tools / platform | Unity / Windows |
-| Team | Approximately 15 people |
-| My role | Producer / Lead Designer / Project Manager |
+| Team | 12 people |
+| My role | Producer / Lead Game Designer |
+| Delivered | Playable version released on itch.io |
 
 <figure>
 <video controls playsinline preload="none" poster="../../images/hell-or-sell/inventory-shop.webp" aria-label="Hell or Sell current build reference footage">
 <source src="../../videos/hell-or-sell/current-build.mp4" type="video/mp4" />
 <a href="../../videos/hell-or-sell/current-build.mp4">Download the current build footage.</a>
 </video>
-<figcaption>Current build reference footage. This is an early gameplay recording, not a demonstration of the planned timed combo-clearing rules.</figcaption>
+<figcaption>Gameplay footage of the inventory and shop systems in the existing build.</figcaption>
 </figure>
 
-## 02 — Design Challenge
+## 02 — Design Problem
 
-The original direction aimed for deeper strategy, but several complex features exceeded the team's implementation capacity at the time. Cutting those features reduced complexity, yet also weakened the experience I wanted the systems to support.
+The original design combined buffs, specialized item effects, special inventory mechanics, and complex numerical interactions. Playtest feedback and development constraints exposed two connected problems: the systems asked too much of players learning the game, and they exceeded the team's programming capacity.
 
-I adjusted the direction to the team's capacity and circumstances, leading to the current version. That decision addressed what we could build, but left a design question: how could the existing framework support a more distinct and engaging decision loop?
+Adding more systems was not enough to create better decisions. I needed to keep the strategic value of inventory and economy choices while reducing the rules players had to track and the features the team had to implement.
 
-This account reflects my production decisions and design assessment. It is not a measured playtest finding.
+## 03 — My Decision: Move Variation into Space
 
-## 03 — Design Goals & Constraints
+I cut high-cost systems and unnecessary numerical complexity, then placed more emphasis on different inventory shapes, level-specific spatial constraints, and inventory-management challenges.
 
-The next direction takes inspiration from the compact, time-sensitive decisions of Tetris. It keeps item shapes and combos, with the emphasis on making timely placement choices.
+That kept variation close to the central action: deciding what to fit into the available space and how that inventory supports the selling phase. A different inventory shape can change placement decisions without requiring another specialized effect system.
 
-| Current build | Planned direction |
-| --- | --- |
-| Place items, then switch to selling | Form item combos within a time limit |
-| Slower economy and inventory planning | Faster decisions under time pressure |
-| Inventory supports planning and adjustment | Remove the ability to revise inventory arrangements |
-| Space is managed across the two phases | Clear completed combos to make room for new items |
+The trade-off was deliberate: less systemic complexity, with more of the challenge carried by spatial planning.
 
-The intended experience develops through familiarity with the rules, changing levels, and light roguelite variation. These are design intentions; the new loop and its effects have not yet been validated. Exact timing, combo conditions, and placement restrictions still need to be specified and tested.
+## 04 — Systems I Designed
 
-## 04 — My Contributions
+I defined the core gameplay loop, inventory rules, shop economy, item combinations, progression, scoring, and level-specific rules. I also specified the UI/UX requirements needed to make those rules actionable for players and implementable by the team.
 
-- Designed core systems and the progression loop, using system diagrams and flowcharts to communicate their relationships.
-- Defined interaction logic for inventory, shops, and items, including shared development terminology.
-- Planned tutorial learning and the mechanics introduced across chapters and levels.
-- Coordinated tasks, development priorities, and work across disciplines.
-- Reassessed scope when implementation constraints affected the original experience, and developed the next refactor direction.
+The loop links two kinds of decisions:
 
-The screenshots and video document the team's existing build. My individual contribution is the design and production work described above.
+- **Inventory:** how to use limited space for shaped items and combinations.
+- **Economy:** how the arranged inventory feeds into selling and subsequent choices.
 
-## 05 — Design Decisions
+My work covered design and implementation coordination; programmers and artists built their respective parts of the game.
 
-### Adjust scope around implementation capacity
+## 05 — The Playable Loop
 
-The original strategy direction depended on several complex features. When those features became difficult to implement, I reduced scope and adjusted direction to fit the team. The trade-off was a version we could pursue with our available capacity, at the cost of some intended strategic depth.
+**Arrange items → manage limited inventory space → switch phases → sell items.**
 
-### Change the decision loop while reusing the framework
-
-The planned refactor preserves item shapes and combos but changes their purpose: successful combinations would clear items and recover space under a time limit. Removing later inventory adjustments is intended to make immediate decisions carry more weight.
-
-Reusing the existing framework may reduce the amount of new infrastructure required. The actual implementation effort and whether the changes create a sufficiently different experience remain to be tested.
-
-### Preserve the existing gameplay as a reference
-
-I intend to retain the previous gameplay while refactoring, keeping a concrete reference for the differences between slow resource planning and the proposed faster loop. I plan to use AI-assisted development to support this refactor.
-
-## 06 — Prototype & Iteration
-
-**Existing loop:** place shaped items → plan the inventory → switch phases → sell items.
-
-**Proposed loop:** place items under time pressure → complete a combo → clear its items → use the recovered space for the next decision.
+The existing build brings inventory placement and shop interactions together. The selling screen below shows how the arranged items carry forward into the next phase.
 
 <figure>
 <img src="../../images/hell-or-sell/sales-phase.webp" width="1551" height="866" loading="lazy" alt="Current selling phase with inventory on the left and a customer beside a highlighted item on the right." />
 <figcaption>The current selling phase. This capture documents the existing two-phase structure.</figcaption>
 </figure>
 
-The next prototype needs to establish whether players can recognize useful combinations quickly enough, whether placement restrictions create understandable commitment, and whether space recovery sustains the pace. No outcome from that prototype is claimed here.
+## 06 — Production & Scope
 
-## 07 — Production & Collaboration
+As Producer, I organized weekly design, programming, and art subgroup meetings, plus at least one full-team meeting each week. I coordinated cross-disciplinary work, feature priorities, and the scope of what we could deliver.
 
-My production work connects the intended experience with what the team can implement. The important sequence was identifying an implementation constraint, reducing scope, recognizing the experience lost through those cuts, and proposing a new direction built around systems already available.
-
-This is the reasoning behind the refactor, rather than a claim that every cut was successful. A representative task breakdown and before/after system diagram will be added when available.
+The scope decision connected production with gameplay: I used the intended player choices, playtest feedback, and programming capacity to decide which systems justified their cost. The resulting direction focused on inventory shapes and spatial constraints instead of expanding the effect and buff systems.
 
 <figure>
 <img src="../../images/hell-or-sell/chapter-selection.webp" width="1570" height="872" loading="lazy" alt="Chapter selection interface with a central character and four chapter screens." />
 <figcaption>Chapter-selection interface from the current build.</figcaption>
 </figure>
 
-## 08 — Outcome & Reflection
+## 07 — Delivered Work & Reflection
 
-The existing build provides a concrete record of the placement-and-selling direction. The next phase is a planned refactor toward timed combo clearing; its rules, implementation, and player impact remain unverified.
+The team released a playable version on itch.io. My contribution combined systems design with the production decisions needed to move that design into a build.
 
-The production lesson is that simplifying features also changes the decisions available to the player. When a cut removes the experience those features supported, the remaining systems need a clear new purpose. The refactor is my next attempt to give them that purpose.
+This project made scope a design question as well as a scheduling question: when removing a feature, I had to decide where the remaining gameplay would get its variation and meaningful choices.
 
-<details><summary>Supporting materials still pending</summary><p>System diagrams, a representative scope or task breakdown, refactor comparisons, final rule specifications, playable links, asset credits, and actual test observations.</p></details>
+## 08 — Current Exploration
+
+I am exploring Tetris-like elimination and timed combo clearing as a possible next iteration. This remains a design direction, separate from the released placement-and-selling gameplay shown here.
