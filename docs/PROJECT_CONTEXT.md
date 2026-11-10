@@ -4,7 +4,7 @@
 
 ## 目标与定位
 - 英文游戏设计作品集，面向美国游戏行业招聘者，也供项目负责人和申请评审阅读。
-- 主定位为 **Systems & Gameplay Designer**；Level Design 是核心方向之一。Production / Scope Management 是差异化能力，不取代游戏设计身份。
+- 主定位为 **Systems & Gameplay Designer**；Level Design 是核心方向之一。Game Direction 是发展方向；历史 Production / Scope Management 经历保留在具体项目中，不作为主要职业兴趣。
 - 通过具体设计问题、个人决定、实际贡献和交付内容证明能力。既说明规则，也说明玩家选择与体验。
 - 不编造测试、效果、贡献或未完成系统，不用重复免责声明削弱已完成工作。
 
@@ -21,7 +21,7 @@
 - 验证：`npm run check`、`npm run build`、`npm run verify`。纯文档修改通常无需构建。
 
 ## 页面与内容层级
-保留首页 Hero → Internship → Selected Work → Design Thinking → Production & Leadership → Experience → About & Contact，以及五个案例路由。
+保留首页 Hero → Internship → Selected Work → Design Thinking → Game Direction → Experience → About & Contact，以及五个案例路由。
 
 | 层级 | 项目 | 本人确认的定位与事实 |
 | --- | --- | --- |
@@ -46,3 +46,5 @@
 ## 创作动机（本人最新确认）
 - 享受制作游戏的过程，认为制作有趣的游戏本身也有乐趣。
 - 重视游戏带来的开心、欢乐、学习与感悟；希望成长为成熟的系统策划，并在自己的项目中担任 Game Director。这是发展目标，不作为已任职头衔。
+
+- 04 已按本人要求改为 Game Direction：关注游戏的表现、整体体验与核心乐趣；不再以 Producer、排期或落地管理为栏目主线。Game Director 为发展方向，不补造已担任该职位的经历。
