@@ -54,8 +54,10 @@ const steps = ['Problem','Analysis','Design','Prototype','Playtest','Iteration']
   </section>
   <section id="experience" class="wrap section" aria-labelledby="experience-title"><div class="section-heading compact"><p class="eyebrow">05 / EXPERIENCE</p><h2 id="experience-title">A foundation in design.</h2></div>
     <div class="experience-row"><span>INTERNSHIP</span><div><h3>{internship.company} · {internship.project}</h3><p>{internship.role}</p><p class="pending">{internship.dates}</p></div><a class="text-link" href="#internship">Internship details ↗</a></div>
-    <div class="experience-row"><span>EDUCATION</span><div><h3>University of California, Irvine</h3><p>B.S. Game Design and Interactive Media</p></div><span class="pending">{profile.educationDates}</span></div>
-    {projects.map(project => <div class="experience-row"><span>TEAM PROJECT</span><div><h3>{project.data.title}</h3><p>{project.data.role}</p><p class="pending">{project.data.year}</p></div><a class="text-link" href={local(`projects/${project.id}/`)}>Case study ↗</a></div>)}
+    <div class="experience-summary">
+      <div><p class="eyebrow">EDUCATION</p><h3>University of California, Irvine</h3><p>B.S. Game Design and Interactive Media</p><p class="pending">{profile.educationDates}</p></div>
+      <div><p class="eyebrow">TEAM PROJECTS</p><ul class="experience-projects">{projects.map(project => <li><a class="text-link" href={local(`projects/${project.id}/`)}>{project.data.title} ↗</a><p>{project.data.role}</p><p class="pending">{project.data.year}</p></li>)}</ul></div>
+    </div>
   </section>
   <section id="contact" class="contact-section section" aria-labelledby="contact-title"><div class="wrap"><p class="eyebrow">06 / ABOUT & CONTACT</p><div class="contact-grid"><div><h2 id="contact-title">Good games begin<br />with meaningful<br /><em>decisions.</em></h2></div><div><p class="about-copy">{profile.about}</p><p>I care about what players do and why they want to keep playing: the satisfaction of understanding a puzzle, the tension of a spatial trade-off, or the humor of an awkward expression. I turn those goals into rules, levels, feedback, and a scope the team can deliver.</p><div class="contact-links">{profile.email ? <a href={`mailto:${profile.email}`}>Email ↗</a> : <span>Email <small>TODO · address pending</small></span>}{profile.linkedin ? <a href={profile.linkedin}>LinkedIn ↗</a> : <span>LinkedIn <small>TODO · link pending</small></span>}<a href={profile.github}>GitHub ↗</a>{profile.resume ? <a href={local(profile.resume)}>Resume PDF ↗</a> : <span>Resume PDF <small>TODO · file pending</small></span>}</div></div></div></div></section>
 </Layout>
@@ -90,9 +92,19 @@ const steps = ['Problem','Analysis','Design','Prototype','Playtest','Iteration']
   .internship-summary { font-size: 15px; line-height: 1.8; margin: 0; }
   .other-project-description { font-size: 14px; color: var(--muted); max-width: 660px; margin: 12px 0; }
   .other-projects > div > span { max-width: 250px; flex-shrink: 0; line-height: 1.6; }
+  .experience-summary { display: grid; grid-template-columns: 1fr 3fr; gap: 40px; border-top: 1px solid var(--line); padding: 30px 0; }
+  .experience-summary .eyebrow { color: var(--muted); margin-bottom: 20px; }
+  .experience-summary h3 { font-size: 25px; margin-bottom: 12px; }
+  .experience-summary p { font-size: 14px; margin-bottom: 7px; }
+  .experience-projects { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 22px 20px; list-style: none; padding: 0; margin: 0; }
+  .experience-projects li { min-width: 0; }
+  .experience-projects .text-link { font-size: 16px; margin-bottom: 10px; }
   .experience-row > span:last-child { max-width: 190px; }
   .internship-note { color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 20px; margin: 0; }
+  @media(max-width: 1000px) { .experience-projects { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   @media(max-width: 700px) {
+    .experience-projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .experience-summary { grid-template-columns: 1fr; gap: 28px; }
     .internship-captures { width: 100%; }
     .internship-captures.paired { grid-template-columns: 1fr; }
     .internship-logo { width: 180px; }
