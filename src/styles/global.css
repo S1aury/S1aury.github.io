@@ -161,7 +161,7 @@ img {
   justify-content: space-between;
   gap: 20px;
 }
-.hero-name { font-size: 20px; font-weight: 500; letter-spacing: .06em; margin: 0 0 10px; }
+.hero-name { font-size: clamp(26px, 3vw, 38px); font-weight: 500; letter-spacing: .06em; margin: 0 0 10px; }
 .hero-portfolio { font-size: clamp(20px, 2.5vw, 32px); line-height: 1.3; font-weight: 500; letter-spacing: .03em; color: var(--orange); margin: 0; }
 .hero-top .location { padding-top: 4px; }
 .location {
@@ -908,6 +908,7 @@ img {
     gap: 30px;
     padding: 0 0 35px;
   }
+  .hero-name,
   .hero-role {
     font-size: 26px;
   }
