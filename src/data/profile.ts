@@ -5,7 +5,7 @@ export const profile = {
   intro: "I design mechanics, economies, and puzzles that give players meaningful choices—and help teams turn those designs into playable games.",
   education: "B.S. Game Design and Interactive Media · University of California, Irvine",
   educationDates: "Sep 2023 – Expected Mar 2027",
-  about: "I'm Beiming Xu, a Game Design and Interactive Media undergraduate at UC Irvine. I design gameplay systems and levels, from released Genshin Impact content at miHoYo to puzzles I built in Unity. I also take ownership of production: setting scope, coordinating programmers and artists, and carrying design decisions through development.",
+  about: "I'm Beiming Xu, a Game Design and Interactive Media undergraduate at UC Irvine. I make games because I enjoy the process of creating them. Working out how to make a game fun is something I find rewarding in itself.",
   email: "beimingxu5668@gmail.com",
   linkedin: "https://www.linkedin.com/in/beiming-xu-61318834a/",
   github: "https://github.com/S1aury",
