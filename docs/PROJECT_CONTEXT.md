@@ -42,3 +42,7 @@
 
 ## 按需参考
 `README.md` 为运行说明；`CONTENT_GUIDE_ZH.md` 为维护流程；`TODO_CONTENT.md` 和 `VALIDATION.md` 含历史状态。待补内容以 `docs/CONTENT_STATUS.md` 和当前源码为准，不通读所有日志。
+
+## 创作动机（本人最新确认）
+- 享受制作游戏的过程，认为制作有趣的游戏本身也有乐趣。
+- 重视游戏带来的开心、欢乐、学习与感悟；希望成长为成熟的系统策划，并在自己的项目中担任 Game Director。这是发展目标，不作为已任职头衔。
