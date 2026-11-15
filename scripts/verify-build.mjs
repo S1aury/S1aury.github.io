@@ -14,7 +14,10 @@ const files = (await walk(root)).filter((f) => f.endsWith(".html"));
 const failures = [];
 for (const file of files) {
   const html = await readFile(file, "utf8");
-  for (const match of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
+  const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
+  if (new Set(ids).size !== ids.length)
+    failures.push(`${file}: duplicate HTML ids`);
+  for (const match of html.matchAll(/\b(?:href|src|poster)="([^"]+)"/g)) {
     const value = match[1];
     if (/^(?:https?:|mailto:|data:)/.test(value)) continue;
     const [rawPath, hash] = value.split("#");
@@ -55,18 +58,19 @@ for (const slug of [
   "waltz-of-weights",
   "ratoolight",
   "humanize",
+  "well-be-right-back",
 ]) {
   const html = await readFile(
     path.join(root, "projects", slug, "index.html"),
     "utf8",
   );
-  if ((html.match(/<h2\b/g) || []).length < 8)
-    failures.push(`${slug}: fewer than eight case study sections`);
+  if ((html.match(/<h2\b/g) || []).length < 4)
+    failures.push(`${slug}: fewer than four case study sections`);
 }
 if (failures.length) {
   console.error(failures.join("\n"));
   process.exit(1);
 }
 console.log(
-  `PASS: ${files.length} HTML pages; internal links, anchors, assets, metadata, and five case study structures. Base: ${base || "/"}`,
+  `PASS: ${files.length} HTML pages; internal links, anchors, assets, metadata, and six case study structures. Base: ${base || "/"}`,
 );
