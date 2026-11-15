@@ -1,12 +1,14 @@
 ---
 title: RatO.oLight
-order: 2
+order: 1
 genre: 2D exploration & puzzle platformer
 role: Lead Game Designer / Level Designer
-summary: "Light-based environmental puzzles across 10 rooms I built in Unity. I redirected the gameplay toward discovery and structured how players learn and combine mechanics."
+summary: "A puzzle-platformer where colored light changes how objects behave."
 focus: [Light-Based Puzzles, 10 Built Levels, Player Learning, Unity Level Building]
 accent: blue
 year: 'Oct 2024'
+coverImage: images/ratoolight/cover.png
+coverAlt: "RatO.oLight gameplay with the mouse, crate, cheese and colored platforms"
 image: images/ratoolight/level-introduction.webp
 imageAlt: "RatO.oLight laboratory level with the mouse, control prompts, cheese, platforms, and colored structures."
 links:
@@ -15,86 +17,49 @@ links:
   - label: Watch the promotional video on Bilibili
     url: https://www.bilibili.com/video/BV17W1jYhEJy/
 tier: main
+contribution: "Sole game designer; designed and built all 10 rooms in Unity."
+outcome: "Released game · 3 weeks · approximately 15 minutes."
+decision: "Preserve the light theme; shift the challenge from precision jumping to environmental puzzles."
+video: videos/ratoolight/trailer.mp4
+team: "8 people"
+platform: "Unity · download on itch.io"
+videoTitle: "Watch Trailer · 29 seconds"
 ---
 
-## 01 — Overview
+## Goal & controls
 
-RatO.oLight is a puzzle-platformer about a mouse exploring a laboratory where lighting changes how environmental objects behave. As the project's only Game Designer, I designed the gameplay and built all 10 puzzle rooms in Unity.
+Explore the laboratory, collect cheese and open routes by changing light and object states. **A/D:** move; **Space:** jump; **F:** interact with switches. Open the map or press **R** to replay.
 
-| Project | Details |
-| --- | --- |
-| Development | October 2024 · Three-week Spotlight Game Jam |
-| Tools / platforms | Unity / Windows and Mac |
-| Team | 8 people |
-| My role | Lead Game Designer / Level Designer |
-| Delivered | Released on itch.io · Approximately 15 minutes to complete |
+## Light rules
 
-<figure>
-<video controls playsinline preload="none" poster="../../images/ratoolight/level-introduction.webp" aria-label="RatO.oLight promotional video">
-<source src="../../videos/ratoolight/trailer.mp4" type="video/mp4" />
-<a href="../../videos/ratoolight/trailer.mp4">Download the promotional video.</a>
-</video>
-<figcaption>RatO.oLight promotional video, supplied with the project materials. Also available on <a href="https://www.bilibili.com/video/BV17W1jYhEJy/">Bilibili</a>.</figcaption>
-</figure>
+<div class="rule-grid"><div class="rule-red"><h3>Red → Larger</h3><div class="rule-symbol">□ → ▣</div><p>Objects grow. Their changed size changes the space they occupy.</p></div><div class="rule-blue"><h3>Blue → Frozen</h3><div class="rule-symbol">Moving → Still</div><p>Objects freeze. A moving object becomes a fixed part of the puzzle.</p></div><div class="rule-green"><h3>Green → Movable</h3><div class="rule-symbol">Fixed → Movable</div><p>Objects can move, changing the available arrangement.</p></div></div>
 
-## 02 — Original Problem
+**Each light color also removes platforms of the same color.** The diagrams above explain confirmed rules; they are not before-and-after gameplay captures. Combined-color effects and their priority are not specified here.
 
-The initial concept was an intensive parkour/platformer built around light and shadow. It depended on substantial programming work and finely tuned platforming levels, which did not fit the three-week development window.
+## A teaching puzzle
 
-When I took over the main design work, I wanted to preserve the light-and-shadow theme while finding a form the team could complete.
+**Teaching purpose: crates can activate pressure plates, too.** This sequence isolates the crate–plate relationship before later rooms combine light rules.
 
-## 03 — My Decision: Change What Light Does
+<div class="steps"><figure><a href="../../images/ratoolight/puzzle-19.jpg"><img src="../../images/ratoolight/puzzle-19.jpg" alt="Mouse beside a crate; a green barrier blocks the cheese" loading="lazy"/></a><figcaption><strong>1 · Read the obstacle.</strong> The barrier blocks the cheese; the crate offers something the player can move.</figcaption></figure><figure><a href="../../images/ratoolight/puzzle-20.jpg"><img src="../../images/ratoolight/puzzle-20.jpg" alt="Pushed crate falls toward a pressure plate" loading="lazy"/></a><figcaption><strong>2 · Push the crate.</strong> Moving the crate off the platform brings it toward the plate below.</figcaption></figure><figure><a href="../../images/ratoolight/puzzle-21.jpg"><img src="../../images/ratoolight/puzzle-21.jpg" alt="Crate on plate; green barrier removed" loading="lazy"/></a><figcaption><strong>3 · Plate pressed, path opened.</strong> The crate holds the plate down without the mouse standing on it.</figcaption></figure></div>
 
-I shifted light from primarily changing the player's movement path to changing the behavior of environmental objects. That moved the project toward environmental interaction and puzzle solving.
+## Teaching & iteration
 
-The theme stayed intact, but the central challenge became understanding and applying rules. The intended reward was the satisfaction of discovering how something works and using that knowledge to move forward.
+<div class="flow-strip"><span>Movement</span><b>→</b><span>Crates & switches</span><b>→</b><span>Single-color rules</span><b>→</b><span>Combined light rules</span></div>
 
-## 04 — Gameplay Design Ownership
+Early playtests showed that players struggled to understand the objective and combine mechanics. **I added transition rooms and adjusted content, difficulty and subtle guidance.** This records the observed problem and my response; no follow-up testing result is claimed.
 
-I designed the core mechanics, controls, player abilities, puzzle logic, win conditions, and UI requirements. I also defined tutorial structure, level progression, and difficulty progression so the rooms could build on one another.
+## Direction & scope
 
-The design work connected a player's immediate action—moving, collecting, or interacting—with the next rule they needed to understand.
+<span id="decision"></span><span id="03--my-decision-change-what-light-does"></span>
 
-## 05 — Player Learning through Levels
+The initial light-and-shadow concept emphasized precision platforming. Programming demands and jump tuning were too costly for a three-week production window. I kept the light theme but made light change environmental objects: observation and rule application became the main challenge.
 
-I structured progression around basic movement, item collection, environmental interaction, light-based mechanics, and combinations of previously learned mechanics.
+<div class="compare-media"><figure><a href="../../images/ratoolight/early-prototype.webp"><img src="../../images/ratoolight/early-prototype.webp" alt="Early Unity precision-platforming prototype" loading="lazy"/></a><figcaption><strong>Original direction.</strong> Traversal depended more on movement and precisely tuned jumps.</figcaption></figure><figure><a href="../../images/ratoolight/level-green-light.webp"><img src="../../images/ratoolight/level-green-light.webp" alt="Released laboratory light puzzle" loading="lazy"/></a><figcaption><strong>Released direction.</strong> Light, objects and routes carry the puzzle requirements.</figcaption></figure></div>
 
-Basic control prompts are visible in the game. For the puzzle rules themselves, I relied on room layout, object placement, and interaction feedback rather than lengthy written explanations. The goal was to give players opportunities to discover a rule before asking them to combine it with another.
+## Contribution & results
 
-<figure>
-<img src="../../images/ratoolight/level-introduction.webp" width="941" height="530" loading="lazy" alt="Laboratory layout with control prompts, wooden platforms, cheese, a crate, and red, green, and blue structures." />
-<figcaption>A representative level view: control prompts sit above the starting area, while platforms, cheese, and colored structures occupy the space ahead.</figcaption>
-</figure>
+As the **sole Game Designer**, I defined mechanics, controls, puzzle logic, win conditions and UI requirements. **I designed and built all 10 rooms in Unity** with prefabs, triggers and object placement. The eight-person team released a complete game in three weeks, with approximately 15 minutes of play.
 
-<figure>
-<img src="../../images/ratoolight/level-green-light.webp" width="938" height="518" loading="lazy" alt="Laboratory view with a green spotlight over a block and switch, elevated cheese, and a vertical blue structure ahead of the mouse." />
-<figcaption>A second level view places a green-lit block and switch to the left, elevated cheese near the center, and a vertical blue structure ahead of the mouse.</figcaption>
-</figure>
+<details><summary>Team art / credits</summary><img src="../../images/ratoolight/mouse-and-cheese.webp" alt="Team-created mouse character artwork" width="120" height="120" loading="lazy"/><div class="team-sprites"><img src="../../images/ratoolight/mouse-animation-01.webp" alt="Team-created mouse animation one" width="64" height="64" loading="lazy"/><img src="../../images/ratoolight/mouse-animation-02.webp" alt="Team-created mouse animation two" width="64" height="64" loading="lazy"/></div><p>Character art and animation are team contributions, not evidence of my production decisions.</p></details>
 
-## 06 — Building All 10 Rooms in Unity
-
-I personally built every puzzle room using sprite sheets, prefabs, triggers, and object placement. This let me carry the mechanics and progression directly into playable spaces, including the placement of interactable objects and the sequence of challenges.
-
-<figure style="max-width:464px">
-<img src="../../images/ratoolight/early-prototype.webp" width="464" height="240" loading="lazy" alt="Early Unity prototype showing the mouse above a block on a simple ground platform against a plain background." />
-<figcaption>An early Unity prototype, before the later laboratory presentation.</figcaption>
-</figure>
-
-## 07 — Working within Three Weeks
-
-Redirecting the concept reduced dependence on demanding platforming features and precision level production. I coordinated with programming, art, and audio while keeping the design centered on light-based object behavior and the 10-room progression.
-
-<figure>
-<div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
-<img src="../../images/ratoolight/mouse-and-cheese.webp" width="300" height="300" loading="lazy" style="width:120px;max-width:100%;image-rendering:pixelated" alt="Pixel-art mouse holding a piece of cheese." />
-<img src="../../images/ratoolight/mouse-animation-01.webp" width="64" height="64" loading="lazy" style="width:64px;image-rendering:pixelated" alt="First supplied mouse animation." />
-<img src="../../images/ratoolight/mouse-animation-02.webp" width="64" height="64" loading="lazy" style="width:64px;image-rendering:pixelated" alt="Second supplied mouse animation." />
-</div>
-<figcaption>Character artwork and two original animated sprites from the project's supplied assets.</figcaption>
-</figure>
-
-## 08 — Delivered Experience
-
-The eight-person team completed and released a fully finishable game in three weeks, with approximately 15 minutes of play. My contribution covered the gameplay rules, the learning sequence, and hands-on construction of all 10 rooms.
-
-The project demonstrates how I preserve a core creative idea while changing its gameplay demands to fit a team—and how I turn that direction into levels players can explore.
+Trailer: 29 seconds, available at the top of this page and on Bilibili. Full game: itch.io, approximately 15 minutes. Download operating systems and a recorded retest remain unconfirmed.

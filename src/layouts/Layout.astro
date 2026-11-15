@@ -5,7 +5,7 @@ import { profile } from '../data/profile';
 interface Props { title?: string; description?: string }
 const { title = `${profile.name} — ${profile.title}`, description = profile.intro } = Astro.props;
 const home = Astro.url.pathname.replace(import.meta.env.BASE_URL, '') === '';
-const nav = [['internship','Internship'],['work','Work'],['process','Process'],['production','Direction'],['experience','Experience'],['contact','Contact']];
+const nav = [['work','Work'],['internship','Internship'],['process','Design in Practice'],['contact','About / Contact']];
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 ---
 <!doctype html>
@@ -26,15 +26,56 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
     <a class="wordmark" href={local()} aria-label="Beiming Xu home">BX<span>.</span></a>
     <details class="mobile-menu"><summary>Menu</summary><nav aria-label="Mobile navigation">{nav.map(([id,label]) => <a href={`${local()}#${id}`}>{label}</a>)}</nav></details>
     <nav class="desktop-nav" aria-label="Main navigation">{nav.map(([id,label]) => <a href={`${local()}#${id}`} data-section={home ? id : undefined}>{label}</a>)}</nav>
-    <span class="header-note">SYSTEMS, GAMEPLAY & LEVEL DESIGN</span>
+    <span class="header-note">SYSTEMS / GAME DIRECTION / LEVELS</span>
   </header>
   <main id="main"><slot /></main>
   <footer class="site-footer"><a href={local()}>Beiming Xu</a><span>{profile.title}</span><a href="#main">Back to top ↑</a></footer>
+  <dialog class="image-dialog" aria-label="Enlarged gameplay image"><button type="button" autofocus>Close ×</button><img alt=""/></dialog>
   <script>
-    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (!motion.matches && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }), { threshold: 0.06 });
-      document.querySelectorAll('.reveal').forEach(el => { el.classList.add('animate'); observer.observe(el); });
+    const dialog = document.querySelector<HTMLDialogElement>('.image-dialog');
+    const enlarged = dialog?.querySelector('img');
+    let imageTrigger: HTMLAnchorElement | undefined;
+    document.querySelectorAll<HTMLImageElement>('.prose figure img, .internship-visual img').forEach(img => {
+      let anchor = img.closest<HTMLAnchorElement>('a');
+      if (!anchor) {
+        anchor = document.createElement('a'); anchor.href = img.src;
+        img.replaceWith(anchor); anchor.append(img);
+      }
+      anchor.classList.add('zoomable'); anchor.setAttribute('aria-label', `Enlarge: ${img.alt}`);
+      anchor.addEventListener('click', event => {
+        if (!dialog || !enlarged || event.ctrlKey || event.metaKey) return;
+        event.preventDefault(); imageTrigger = anchor!;
+        enlarged.src = anchor!.href; enlarged.alt = img.alt; dialog.showModal();
+      });
+    });
+    dialog?.querySelector('button')?.addEventListener('click', () => dialog.close());
+    dialog?.addEventListener('click', event => { if(event.target===dialog) dialog.close(); });
+    dialog?.addEventListener('close', () => imageTrigger?.focus());
+    document.querySelectorAll('video').forEach(video => video.addEventListener('play', () => {
+      document.querySelectorAll('video').forEach(other => { if(other !== video) other.pause(); });
+    }));
+    const caseLinks = document.querySelectorAll<HTMLAnchorElement>('[data-case-section]');
+    if(caseLinks.length && 'IntersectionObserver' in window) {
+      const sections = Array.from(document.querySelectorAll<HTMLElement>('.prose h2'));
+      const updateCaseNavigation = () => {
+        let active = sections[0]?.id;
+        for(const heading of sections) if(heading.getBoundingClientRect().top <= 150) active = heading.id;
+        caseLinks.forEach(link => { if(link.dataset.caseSection===active) link.setAttribute('aria-current','location'); else link.removeAttribute('aria-current'); });
+      };
+      window.addEventListener('scroll', updateCaseNavigation, {passive:true}); updateCaseNavigation();
+    }
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!reducedMotion.matches && 'IntersectionObserver' in window) {
+      const entrance = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        if (reducedMotion.matches) { entrance.unobserve(entry.target); return; }
+        const animation = entry.target.animate([{opacity:0,transform:'translateY(24px)'},{opacity:1,transform:'translateY(0)'}], {duration:700,easing:'cubic-bezier(.22,1,.36,1)'});
+        const stopMotion = () => animation.finish();
+        reducedMotion.addEventListener('change', stopMotion, {once:true});
+        animation.finished.catch(() => {}).then(() => reducedMotion.removeEventListener('change', stopMotion));
+        entrance.unobserve(entry.target);
+      }), {threshold:0, rootMargin:'0px 0px -48px 0px'});
+      document.querySelectorAll('.hero-top,.hero>h1,.hero-bottom,.internship-summary,.internship-peeks>article,.section-heading,.project,.supporting-heading,.decision-links>a,.overview-row,.contact-grid>div,.build-gallery figure').forEach(el => entrance.observe(el));
     }
     const links = document.querySelectorAll<HTMLAnchorElement>('[data-section]');
     if ('IntersectionObserver' in window) {

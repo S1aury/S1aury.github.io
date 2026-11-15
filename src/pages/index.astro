@@ -2,114 +2,28 @@
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { getCollection } from 'astro:content';
-import { profile, otherProjects, otherProjectDetails, internship } from '../data/profile';
+import { profile, internship } from '../data/profile';
 import { local } from '../lib/paths';
-const projects = (await getCollection('projects')).sort((a,b) => a.data.order-b.data.order);
-const steps = ['Problem','Analysis','Design','Prototype','Playtest','Iteration'];
+const projects = (await getCollection('projects')).sort((a,b)=>a.data.order-b.data.order);
+
 ---
 <Layout>
-  <section class="hero wrap" aria-labelledby="hero-title">
+ <section class="hero wrap" aria-labelledby="hero-title">
     <div class="hero-top"><div><p class="hero-name">BEIMING XU</p><p class="hero-portfolio">GAME DESIGN PORTFOLIO</p></div><span class="location">University of California, Irvine</span></div>
     <h1 id="hero-title">Systems &amp; Gameplay<br />Designer<span class="orange">.</span></h1>
     <div class="hero-bottom"><div><p class="hero-role">Systems. Levels. Player experience.</p><p class="hero-intro">{profile.intro}</p><div class="hero-actions"><a class="button" href="#work">View projects <span aria-hidden="true">↓</span></a>{profile.resume ? <a class="text-link" href={local(profile.resume)}>Resume ↗</a> : <span class="pending">Resume · TODO</span>}<a class="text-link" href="#contact">Contact ↗</a></div></div>
     <div class="hero-index"><span>01 — Systems & gameplay</span><span>02 — Levels & player learning</span><span>03 — Game direction</span></div></div>
     <div class="hero-caption"><span>RULES. DECISIONS. PLAYABLE EXPERIENCES.</span><span>SCROLL TO EXPLORE ↓</span></div>
   </section>
-  <section id="internship" class="internship-section section" aria-labelledby="internship-title"><div class="wrap">
-    <div class="section-heading"><p class="eyebrow">01 / INDUSTRY EXPERIENCE</p><h2 id="internship-title">Internship</h2><p>Released gameplay, TCG systems, and content implementation on Genshin Impact.</p></div>
-    <div class="internship-heading"><img class="internship-logo" src={local('images/internship/mihoyo-logo.webp')} alt="miHoYo — Tech Otakus Save the World" width="889" height="415" /><div class="internship-identity"><h3>{internship.company}</h3><p class="internship-role">{internship.role}</p><p class="internship-project">Project · {internship.project}</p><p class="internship-project">{internship.location}</p></div><p class="pending">{internship.dates || 'Dates · TODO'}</p></div>
-    <div class="internship-details">
-      <div><p class="eyebrow">DESIGN & IMPLEMENTATION</p>{internship.responsibilities.length ? <ul>{internship.responsibilities.map(item => <li>{item}</li>)}</ul> : <p class="pending">TODO · Specific responsibilities and individual contributions to be added.</p>}</div>
-      <div><p class="eyebrow">DESIGN & COLLABORATION</p><p class="internship-summary">{internship.summary}</p></div>
-    </div>
-    <div class="internship-showcase">
-      {internship.activities.map((activity, i) => <article class="internship-gallery" aria-labelledby={`internship-area-${i}`}>
-        <div class="internship-gallery-heading"><p class="eyebrow">0{i + 1} / PUBLIC GAMEPLAY</p><h3 id={`internship-area-${i}`}>{activity.title}</h3><p>{activity.summary}</p></div>
-        {activity.title.startsWith('Genius') && <div class="internship-card-case">
-          <p class="eyebrow">DESIGN REQUIREMENTS → MECHANICS → CONFIGURATION → PLAYTESTING → BALANCE → RELEASE</p>
-          <h4>Adjusting an underpowered character card</h4>
-          <p>I defined character skills, their effects and triggers, resource costs, and numerical values, then configured the card through JSON and the internal editor. During internal testing, I found that one character card was underpowered and adjusted its balance before release.</p>
-          <p>Alongside the balance work, I discussed implementation feasibility with programmers and followed up on QA issues through debugging and validation. The result was a released character card, with design and configuration carried through to the shipped content.</p>
-        </div>}
-        <div class:list={['internship-captures', { paired: activity.images.length > 1 }]}>{activity.images.map(img => <figure><a href={local(img.src)} aria-label={`View full-size image: ${img.caption}`}><img src={local(img.src)} alt={img.alt} loading="lazy" /></a><figcaption>{img.caption}</figcaption></figure>)}</div>
-      </article>)}
-    </div>
-    <p class="internship-note">Public screenshots show the relevant gameplay areas, rather than individual card attribution or internal tools. Game imagery belongs to its respective rights holders.</p>
-  </div></section>
-  <section id="work" class="wrap section" aria-labelledby="work-title">
-    <div class="section-heading"><p class="eyebrow">02 / SELECTED WORK</p><h2 id="work-title">Designed to be played.<br /><span class="muted">Built to be understood.</span></h2><p>Systems, choices, and the work behind them.</p></div>
-    <p class="eyebrow">MAIN CASE STUDIES · SYSTEMS, GAMEPLAY & LEVEL DESIGN</p>
-    {projects.filter(project => project.data.tier === 'main').map(project => <ProjectCard project={project} index={projects.indexOf(project)} />)}
-    <p class="eyebrow">SUPPORTING PROJECTS · MECHANICS, ECONOMY & RAPID PROTOTYPING</p>
-    {projects.filter(project => project.data.tier === 'supporting').map(project => <ProjectCard project={project} index={projects.indexOf(project)} />)}
-    <div class="other-projects"><p class="eyebrow">FUTURE MAIN CASE STUDY</p>{otherProjects.map(p => <div><div><h3>{p}</h3>{otherProjectDetails[p] && <><p class="other-project-description">{otherProjectDetails[p].summary}</p><p class="pending">{otherProjectDetails[p].role}</p></>}</div><span>{otherProjectDetails[p]?.status || 'In development'}</span></div>)}</div>
-  </section>
-  <section id="process" class="process-section section" aria-labelledby="process-title"><div class="wrap">
-    <div class="section-heading"><p class="eyebrow">03 / DESIGN THINKING</p><h2 id="process-title">Start with a question.<br /><span class="muted">Make the answer playable.</span></h2><p>I start with the decisions and feelings a game should create, then shape its rules, levels, and scope around that experience.</p></div>
-    <ol class="process-line">{steps.map((step,i) => <li><span>0{i+1}</span>{step}<b aria-hidden="true">↗</b></li>)}</ol>
-    <div class="process-examples"><div><p class="eyebrow">SYSTEMS / HELL OR SELL</p><h3>Keep the choices. Simplify the systems.</h3><p>Complex effects and numerical interactions raised the learning and implementation costs. I cut high-cost features and moved more variation into inventory shapes and level-specific spatial constraints, keeping the focus on placement and economic decisions.</p><a class="text-link" href={local('projects/hell-or-sell/')}>Read the design decisions ↗</a></div><div><p class="eyebrow">LEVELS / RATO.OLIGHT</p><h3>Teach through interaction.</h3><p>I redirected a demanding platformer concept toward light-based environmental puzzles, then built all 10 puzzle rooms in Unity. The progression introduces movement and interaction before asking players to combine light-based mechanics.</p><a class="text-link" href={local('projects/ratoolight/')}>Explore the level design ↗</a></div></div>
-  </div></section>
-  <section id="production" class="wrap section" aria-labelledby="production-title"><div class="section-heading"><p class="eyebrow">04 / GAME DIRECTION</p><h2 id="production-title">Shape the game.<br /><span class="muted">Protect the experience.</span></h2><p>My goal is to become a Game Director, shaping what a game expresses and how it feels to play, from its central idea to the experience as a whole.</p></div>
-    <div class="production-grid"><div class="production-feature"><p class="eyebrow">DESIGN DIRECTION / RATO.OLIGHT</p><h3>From demanding jumps<br />to discovery.</h3><p>I redirected RatO.oLight from a demanding platformer toward light-based environmental puzzles. The new direction centered on discovering rules and combining them across a sequence of rooms.</p><a class="text-link" href={local('projects/ratoolight/#03--my-decision-change-what-light-does')}>Explore the change in direction ↗</a></div><div class="production-list">{[['01','Start with an experience','What should make this game enjoyable? I am drawn to the humor of Humanize, the discoveries in RatO.oLight, and the spatial choices in Hell or Sell.'],['02','Give the parts a shared purpose','I want mechanics, levels, pacing, and presentation to support the same idea, shaping a game that feels coherent as a whole.'],['03','Keep what makes the game fun','In Hell or Sell, I reduced complex effects and focused variation on inventory shapes and spatial challenges. The choice was about where the game’s fun should come from.']].map(([n,t,d])=><div><span>{n}</span><div><h3>{t}</h3><p>{d}</p></div></div>)}</div></div>
-  </section>
-  <section id="experience" class="wrap section" aria-labelledby="experience-title"><div class="section-heading compact"><p class="eyebrow">05 / EXPERIENCE</p><h2 id="experience-title">A foundation in design.</h2></div>
-    <div class="experience-row"><span>INTERNSHIP</span><div><h3>{internship.company} · {internship.project}</h3><p>{internship.role}</p><p class="pending">{internship.dates}</p></div><a class="text-link" href="#internship">Internship details ↗</a></div>
-    <div class="experience-summary">
-      <div><p class="eyebrow">EDUCATION</p><h3>University of California, Irvine</h3><p>B.S. Game Design and Interactive Media</p><p class="pending">{profile.educationDates}</p></div>
-      <div><p class="eyebrow">TEAM PROJECTS</p><ul class="experience-projects">{projects.map(project => <li><a class="text-link" href={local(`projects/${project.id}/`)}>{project.data.title} ↗</a><p>{project.data.role}</p><p class="pending">{project.data.year}</p></li>)}</ul></div>
-    </div>
-  </section>
-  <section id="contact" class="contact-section section" aria-labelledby="contact-title"><div class="wrap"><p class="eyebrow">06 / ABOUT & CONTACT</p><div class="contact-grid"><div><h2 id="contact-title">I find joy<br />in making<br /><em>games.</em></h2></div><div><p class="about-copy">{profile.about}</p><p>I believe games can bring people joy, make them laugh, and offer something to learn from or reflect on. Creating those experiences feels meaningful to me. That is why I want to grow into a skilled systems designer and take on the role of Game Director in my own projects.</p><div class="contact-links">{profile.email ? <a href={`mailto:${profile.email}`}>Email ↗</a> : <span>Email <small>TODO · address pending</small></span>}{profile.linkedin ? <a href={profile.linkedin}>LinkedIn ↗</a> : <span>LinkedIn <small>TODO · link pending</small></span>}<a href={profile.github}>GitHub ↗</a>{profile.resume ? <a href={local(profile.resume)}>Resume PDF ↗</a> : <span>Resume PDF <small>TODO · file pending</small></span>}</div></div></div></div></section>
+ <section id="internship" class="wrap internship-home" aria-label="Internship summary"><div class="internship-summary"><img src={local('images/internship/mihoyo-logo.webp')} alt="miHoYo" width="889" height="415"/><div><p class="eyebrow">GENSHIN IMPACT</p><h2>Game Design Intern</h2><p>{internship.dates}</p><p>Bullet-dodging gameplay · TCG card design · UGC & multiplayer</p></div></div><div class="internship-peeks"><article><a class="internship-picture" href={local('internship/#area-2')} aria-label="View TCG card design details"><img src={local('images/internship/gcg-match.webp')} alt="Public Genius Invokation TCG match" loading="lazy"/></a><div><p class="eyebrow">GENSHIN IMPACT</p><h3>TCG · Card design</h3></div><div class="internship-detail-action"><a class="text-link" href={local('internship/#area-2')}>View TCG contributions & details ↗</a></div></article><article><a class="internship-picture" href={local('internship/#area-0')} aria-label="View released bullet-dodging gameplay details"><img src={local('images/internship/live-event-waves.webp')} alt="Released Genshin Impact bullet-dodging encounter" loading="lazy"/></a><div><p class="eyebrow">GENSHIN IMPACT</p><h3>Released 2D Bullet-Dodging Gameplay</h3></div><div class="internship-detail-action"><a class="text-link" href={local('internship/#area-0')}>View gameplay contributions & details ↗</a></div></article><p class="evidence-note">Public product context · Genshin Impact imagery belongs to its respective rights holders. Only the contributions described in the detail page are attributed to me.</p><a class="text-link internship-all-details" href={local('internship/')}>View full internship experience ↗</a></div></section>
+ <section id="work" class="wrap section" aria-labelledby="work-title">
+  <div class="section-heading"><div><p class="eyebrow">PERSONAL PROJECT</p><h2 id="work-title">Personal Project</h2></div><p>My contribution, the choices behind it, and what the team delivered.</p></div>
+  <div class="main-projects">{projects.filter(p=>p.data.tier==='main').map(p=><ProjectCard project={p} index={projects.indexOf(p)}/>)}</div>
+  <div class="supporting-heading"><h3>Smaller projects, focused ideas</h3><span>Mechanics / economy / rapid prototyping</span></div>
+  <div class="supporting-projects">{projects.filter(p=>p.data.tier==='supporting').map(p=><ProjectCard project={p} index={projects.indexOf(p)}/>)}</div>
+ </section>
+ <section id="process" class="wrap section compact-section" aria-labelledby="process-title"><div class="section-heading"><div><p class="eyebrow">DESIGN IN PRACTICE</p><h2 id="process-title">Design in practice</h2></div></div><div class="decision-links"><a href={local('projects/hell-or-sell/#decision')}><img src={local("images/hell-or-sell/practice.png")} alt="Hell or Sell inventory and selling phase" loading="lazy"/><span>SYSTEMS / HELL OR SELL</span><h3>Less effect complexity.<br/>More spatial choices.</h3><p>Why I moved variation into inventory shapes and level constraints.</p><b>See the decision & concept diagram ↗</b></a><a href={local('projects/ratoolight/#decision')}><img src={local("images/ratoolight/practice.png")} alt="RatO.oLight released laboratory puzzle with colored light and objects" loading="lazy"/><span>LEVELS / RATO.OLIGHT</span><h3>From precision jumping<br/>to discovering rules.</h3><p>How a new role for light gave the project a clearer direction.</p><b>See the prototype & released direction ↗</b></a></div></section>
+ <span id="production"></span>
+ <section id="experience" class="wrap overview-menu" aria-label="Portfolio overview"><p class="eyebrow">EXPLORE THE PORTFOLIO</p><nav aria-label="Portfolio overview"><div class="overview-row"><span>01 / INTERNSHIP</span><a href="#internship">miHoYo · Genshin Impact <b>↓</b></a></div><div class="overview-row"><span>02 / PERSONAL PROJECT</span><div class="overview-projects">{projects.map(p=><a href={local(`projects/${p.id}/`)}>{p.data.title} <b>↗</b></a>)}</div></div><div class="overview-row"><span>03 / DESIGN & ABOUT</span><div class="overview-projects"><a href="#process">Design in practice <b>↓</b></a><a href="#contact">About · UC Irvine · Contact <b>↓</b></a><a href={local(profile.resume)}>Resume <b>↗</b></a></div></div></nav></section>
+ <section id="contact" class="contact-section section" aria-labelledby="contact-title"><div class="wrap contact-grid"><div><p class="eyebrow">ABOUT / CONTACT</p><h2 id="contact-title">I find joy in making games.</h2></div><div><p class="about-copy">{profile.about}</p><p>I believe games can bring people joy, make them laugh, and offer something to learn from or reflect on. I want to grow as a systems designer and Game Director, creating experiences worth sharing.</p><div class="about-education"><h3>University of California, Irvine</h3><p>B.S. Game Design and Interactive Media<br/>{profile.educationDates}</p></div><div class="contact-links"><a href={`mailto:${profile.email}`}>Email ↗</a><a href={profile.linkedin}>LinkedIn ↗</a><a href={profile.github}>GitHub ↗</a><a href={local(profile.resume)}>Resume PDF ↗</a></div></div></div></section>
 </Layout>
-
-<style>
-  .internship-card-case { max-width: 720px; margin-bottom: 24px; font-size: 15px; line-height: 1.8; }
-  .internship-card-case h4 { font-size: 22px; font-weight: 500; letter-spacing: -.025em; margin: 18px 0; }
-  .internship-section { background: #eceae1; }
-  .internship-heading { display: flex; align-items: start; justify-content: space-between; gap: 24px; padding: 28px 0; border-block: 1px solid var(--line); }
-  .internship-logo { width: 220px; max-width: 100%; height: auto; flex-shrink: 0; }
-  .internship-identity { flex: 1; }
-  .internship-heading h3 { font-size: clamp(32px, 3.6vw, 48px); margin-bottom: 12px; }
-  .internship-role { color: var(--orange); font-size: 15px; margin: 0; }
-  .internship-project { color: var(--muted); font-size: 14px; margin: 10px 0 0; }
-  .internship-details { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; padding-block: 34px; }
-  .internship-details .eyebrow { color: var(--muted); margin-bottom: 18px; }
-  .internship-details ul { padding-left: 18px; margin: 0; font-size: 15px; line-height: 1.8; }
-  .internship-details .pending { max-width: 420px; font-size: 14px; }
-  .internship-showcase { margin-top: 30px; }
-  .internship-gallery { border-top: 1px solid var(--line); padding: 34px 0; }
-  .internship-gallery-heading h3 { font-size: clamp(25px, 3vw, 36px); margin: 12px 0; }
-  .internship-gallery-heading > p:last-child { max-width: 720px; font-size: 15px; color: var(--muted); margin-bottom: 24px; }
-  .internship-captures { width: calc((100% - 24px) / 2); }
-  .internship-captures.paired { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .internship-captures figure { margin: 0; min-width: 0; }
-  .internship-captures a { display: block; }
-  .internship-captures img { width: 100%; height: auto; display: block; }
-  .internship-captures figcaption { font-size: 12px; color: var(--muted); margin-top: 12px; }
-  .internship-activity + .internship-activity { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
-  .internship-activity h4 { font-size: 22px; font-weight: 500; letter-spacing: -.025em; margin: 0 0 16px; }
-  .internship-activity p { font-size: 15px; }
-  .internship-summary { font-size: 15px; line-height: 1.8; margin: 0; }
-  .other-project-description { font-size: 14px; color: var(--muted); max-width: 660px; margin: 12px 0; }
-  .other-projects > div > span { max-width: 250px; flex-shrink: 0; line-height: 1.6; }
-  .experience-summary { display: grid; grid-template-columns: 1fr 3fr; gap: 40px; border-top: 1px solid var(--line); padding: 30px 0; }
-  .experience-summary .eyebrow { color: var(--muted); margin-bottom: 20px; }
-  .experience-summary h3 { font-size: 25px; margin-bottom: 12px; }
-  .experience-summary p { font-size: 14px; margin-bottom: 7px; }
-  .experience-projects { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 22px 20px; list-style: none; padding: 0; margin: 0; }
-  .experience-projects li { min-width: 0; }
-  .experience-projects .text-link { font-size: 16px; margin-bottom: 10px; }
-  .experience-row > span:last-child { max-width: 190px; }
-  .internship-note { color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 20px; margin: 0; }
-  @media(max-width: 1000px) { .experience-projects { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-  @media(max-width: 700px) {
-    .experience-projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .experience-summary { grid-template-columns: 1fr; gap: 28px; }
-    .internship-captures { width: 100%; }
-    .internship-captures.paired { grid-template-columns: 1fr; }
-    .internship-logo { width: 180px; }
-    .internship-heading { flex-direction: column; gap: 14px; }
-    .internship-heading > .pending { margin: 0; }
-    .internship-details { grid-template-columns: 1fr; gap: 30px; }
-  }
-</style>

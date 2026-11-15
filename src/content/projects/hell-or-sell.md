@@ -1,90 +1,69 @@
 ---
 title: Hell or Sell
-order: 1
+order: 3
 genre: Inventory & economy
-role: Producer / Lead Game Designer
-summary: "Inventory systems and a shop economy built around spatial choices. I led design and production, shifting complexity into inventory shapes and level constraints."
-focus: [Inventory Systems, Game Economy, Spatial Constraints, Production Leadership]
+role: Game Director / Systems Designer / Producer
+summary: "Buy and arrange shaped items in a limited backpack, then switch phases to sell."
+focus: [Inventory Systems, Game Economy, Spatial Constraints, Game Direction]
 accent: rust
 year: 'Since Sep 2025'
 image: images/hell-or-sell/inventory-shop.webp
 imageAlt: "Current Hell or Sell build: shaped items in an irregular inventory beside shop choices and upgrades."
 tier: main
+contribution: "Core loop, inventory rules, economy and design direction."
+outcome: "Released playable version · 12-person team."
+decision: "Reduce complex effects; move variation into inventory shapes and spatial limits."
+video: videos/hell-or-sell/current-build.mp4
+team: "12 people"
+platform: "Platform not confirmed"
+videoTitle: "Inventory planning & phase switching · 5 seconds"
 ---
 
-## 01 — Overview
+## Problem
 
-Hell or Sell connects spatial inventory decisions with a shop economy: players arrange shaped items in limited space, then switch to a selling phase. I designed the core loop and its connected systems while leading production for a 12-person team.
+The original design combined buffs, specialized item effects and complex numerical interactions. Playtest feedback and development constraints exposed a high learning cost and work beyond the team's programming capacity.
 
-| Project | Details |
-| --- | --- |
-| Development | September 2025–present |
-| Tools / platform | Unity / Windows |
-| Team | 12 people |
-| My role | Producer / Lead Game Designer |
-| Delivered | Playable version released on itch.io |
+**My challenge:** preserve worthwhile inventory and economy choices while reducing the number of special rules.
 
-<figure>
-<video controls playsinline preload="none" poster="../../images/hell-or-sell/inventory-shop.webp" aria-label="Hell or Sell current build reference footage">
-<source src="../../videos/hell-or-sell/current-build.mp4" type="video/mp4" />
-<a href="../../videos/hell-or-sell/current-build.mp4">Download the current build footage.</a>
-</video>
-<figcaption>Gameplay footage of the inventory and shop systems in the existing build.</figcaption>
-</figure>
+## Decision
 
-## 02 — Design Problem
 
-The original design combined buffs, specialized item effects, special inventory mechanics, and complex numerical interactions. Playtest feedback and development constraints exposed two connected problems: the systems asked too much of players learning the game, and they exceeded the team's programming capacity.
 
-Adding more systems was not enough to create better decisions. I needed to keep the strategic value of inventory and economy choices while reducing the rules players had to track and the features the team had to implement.
+I cut high-cost effects and unnecessary numerical complexity, then moved variation into **inventory outlines, item shapes and level-specific spatial constraints**. The concept diagram below explains this shift; it does not reconstruct historical levels.
 
-## 03 — My Decision: Move Variation into Space
+The trade-off was less systemic complexity, with more challenge carried by spatial planning. A different bag outline can change placement choices without requiring another specialized effect system.
 
-I cut high-cost systems and unnecessary numerical complexity, then placed more emphasis on different inventory shapes, level-specific spatial constraints, and inventory-management challenges.
+<div class="inventory-evidence" id="inventory-evidence"><p class="eyebrow">DESIGN CONCEPT DIAGRAM</p><h3>Move the variation into space.</h3><div class="decision-compare"><div><span class="status">Earlier design direction</span><p>Buffs + specialized item effects + numerical interactions</p><small>More rules to learn and implement.</small></div><span class="compare-arrow" aria-hidden="true">→</span><div><span class="status accent">Chosen direction</span><p>Item shapes + inventory outlines + level constraints</p><small>Different placement choices around the same core action.</small></div></div><div class="board-comparison"><div><p>A · Open rectangle</p><div class="concept-board" aria-hidden="true"><i class="itemA"></i><i class="itemA"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="itemA"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="itemB"></i><i class="itemB"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="itemB"></i><i class="itemB"></i><i class=""></i></div></div><div><p>B · Narrower usable space</p><div class="concept-board" aria-hidden="true"><i class="blocked"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="blocked"></i><i class="blocked"></i><i class="itemA"></i><i class="itemA"></i><i class=""></i><i class=""></i><i class="blocked"></i><i class=""></i><i class="itemA"></i><i class=""></i><i class="itemB"></i><i class="itemB"></i><i class=""></i><i class="blocked"></i><i class=""></i><i class=""></i><i class="itemB"></i><i class="itemB"></i><i class="blocked"></i></div></div></div><p class="evidence-note">Illustration only. These boards explain the design principle; they are not historical levels, validated solutions, or playtest results. Colors distinguish example item groups; the L-shaped group moves when corner space is unavailable.</p></div>
 
-That kept variation close to the central action: deciding what to fit into the available space and how that inventory supports the selling phase. A different inventory shape can change placement decisions without requiring another specialized effect system.
+## Loop & implementation
 
-The trade-off was deliberate: less systemic complexity, with more of the challenge carried by spatial planning.
+<span class="status accent">Implemented build</span>
 
-## 04 — Systems I Designed
+**I designed** the gameplay loop, inventory rules, shop economy, combinations, progression, scoring, level rules and UI/UX requirements. I set the design direction while also handling production coordination. Programmers and artists built their respective parts.
 
-I defined the core gameplay loop, inventory rules, shop economy, item combinations, progression, scoring, and level-specific rules. I also specified the UI/UX requirements needed to make those rules actionable for players and implementable by the team.
+<div class="system-map"><div><h3>What guides a purchase?</h3><p>Customer demand · current items · available money · remaining space</p></div><b>↓</b><div><h3>Buy & arrange</h3><p>An item must make sense economically and fit alongside the existing inventory.</p></div><b>↓</b><div><h3>Switch phases & sell</h3><p>What was bought and packed becomes the available stock for the selling phase.</p></div></div>
 
-The loop links two kinds of decisions:
+This diagram explains the design relationships, not a recorded transaction or an optimal strategy. The real screens below show the planning and selling phases.
 
-- **Inventory:** how to use limited space for shaped items and combinations.
-- **Economy:** how the arranged inventory feeds into selling and subsequent choices.
-
-My work covered design and implementation coordination; programmers and artists built their respective parts of the game.
-
-## 05 — The Playable Loop
-
-**Arrange items → manage limited inventory space → switch phases → sell items.**
-
-The existing build brings inventory placement and shop interactions together. The selling screen below shows how the arranged items carry forward into the next phase.
+<figure class="capture"><div class="capture-frame"><a href="../../images/hell-or-sell/inventory-shop.webp"><img src="../../images/hell-or-sell/inventory-shop.webp" alt="Current inventory and shop screen" loading="lazy" width="1600" height="900" /></a><span class="capture-pin" style="left:17%;top:40%" aria-hidden="true">1<span>↘</span></span><span class="capture-pin" style="left:15%;top:55%" aria-hidden="true">2<span>↘</span></span><span class="capture-pin" style="left:70%;top:59%" aria-hidden="true">3<span>↘</span></span></div><figcaption>Existing build · annotations explain visible inventory rules <a class="capture-full" href="../../images/hell-or-sell/inventory-shop.webp">Full image ↗</a></figcaption><ol class="capture-notes"><li><b>1</b><span>Irregular bag outline: the space available for placement.</span></li><li><b>2</b><span>Shaped items share the same limited grid.</span></li><li><b>3</b><span>Shop choices connect placement to the economy.</span></li></ol><details><summary>Enlarged inventory detail</summary><div class="detail-crop inventory"><img src="../../images/hell-or-sell/inventory-shop.webp" alt="Enlarged detail of inventory from the same screenshot" loading="lazy" /></div><p class="evidence-note">Enlarged crop of this same gameplay capture. Open the full screenshot for context.</p></details></figure>
 
 <figure>
 <img src="../../images/hell-or-sell/sales-phase.webp" width="1551" height="866" loading="lazy" alt="Current selling phase with inventory on the left and a customer beside a highlighted item on the right." />
-<figcaption>The current selling phase. This capture documents the existing two-phase structure.</figcaption>
+<figcaption>Sell: packed inventory becomes available stock. Read this beside the planning screen to follow the same two-phase loop.</figcaption>
 </figure>
 
-## 06 — Production & Scope
+### Production trade-off
 
-As Producer, I organized weekly design, programming, and art subgroup meetings, plus at least one full-team meeting each week. I coordinated cross-disciplinary work, feature priorities, and the scope of what we could deliver.
+I used playtest feedback and programming capacity to decide what to keep, cut or defer. I cut special item functions and reduced follow-up plans to bring the project toward a playable release. Team reviews translated these priorities into tasks; meetings themselves are not presented as evidence of results.
 
-The scope decision connected production with gameplay: I used the intended player choices, playtest feedback, and programming capacity to decide which systems justified their cost. The resulting direction focused on inventory shapes and spatial constraints instead of expanding the effect and buff systems.
+A real pair of alternative inventory layouts and a publishable rule or priority record are still needed to demonstrate the costs of specific choices.
 
-<figure>
-<img src="../../images/hell-or-sell/chapter-selection.webp" width="1570" height="872" loading="lazy" alt="Chapter selection interface with a central character and four chapter screens." />
-<figcaption>Chapter-selection interface from the current build.</figcaption>
-</figure>
+## Results & reflection
 
-## 07 — Delivered Work & Reflection
+<div class="outcome-grid"><div><h3>Delivered</h3><p>The 12-person team released a playable version. My work connected systems design, game direction and production decisions.</p></div><div><h3>Design lesson</h3><p>Removing a feature means deciding where the remaining game will get its variation. Here, I moved it closer to placement and space.</p></div></div>
 
-The team released a playable version on itch.io. My contribution combined systems design with the production decisions needed to move that design into a build.
+<span class="status">Future exploration</span>
 
-This project made scope a design question as well as a scheduling question: when removing a feature, I had to decide where the remaining gameplay would get its variation and meaningful choices.
+Timed combo clearing and Tetris-like elimination remain a possible next iteration. They are not features demonstrated in the current footage.
 
-## 08 — Current Exploration
-
-I am exploring Tetris-like elimination and timed combo clearing as a possible next iteration. This remains a design direction, separate from the released placement-and-selling gameplay shown here.
+<details><summary>Evidence still to add</summary><p>A dated before-and-after build comparison, exact playtest observations and the Hell or Sell itch.io URL. No numerical improvement or measured player outcome is claimed.</p></details>

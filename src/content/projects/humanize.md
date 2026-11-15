@@ -3,7 +3,7 @@ title: Humanize
 order: 5
 genre: Expression-matching game
 role: Game Designer
-summary: "A short comedy about matching facial expressions under timing and energy pressure. I originated the core mechanic and scoped the experience for a 48-hour jam."
+summary: "Pretend to be human by combining facial features under timing and energy pressure."
 focus: [Facial Expression Gameplay, Humor, 48-Hour Game Jam, Scope Control]
 accent: rust
 year: 48-hour game jam
@@ -13,46 +13,51 @@ tier: supporting
 links:
   - label: Download on itch.io
     url: https://wanghuai-chen.itch.io/humanize
+contribution: "Core idea, facial controls, timing, energy and feedback rules."
+outcome: "Released jam game · 48 hours."
+decision: "Build humor from combining facial features under pressure."
+video: videos/humanize/demo-1.mp4
+team: "Approximately 6–7 people"
+platform: "Download on itch.io"
+videoTitle: "Expression matching · 3 seconds"
 ---
 
-## 01 — Overview
+## Problem
 
-Humanize is a short comedy game about reacting to social situations through facial expressions. I proposed the core gameplay concept and worked as Game Designer in a team of approximately 6–7 people during a 48-hour game jam. The team released the game on itch.io.
+A 48-hour jam needed an idea that was recognizable, expressive and small enough to finish. I proposed pretending to be human by controlling facial expressions.
 
-## 02 — Design Problem
+I worked as Game Designer in a team of approximately 6–7 people; I do not claim sole design ownership.
 
-With only 48 hours, I needed a recognizable idea that the team could finish: easy to understand, expressive, and capable of creating humor through the player's actions.
+## Decision
 
-## 03 — My Decision: Make Expressions Playable
 
-Players observe a scene and control three facial features to form an appropriate expression within a time limit. Timing and an energy meter add pressure to the act of choosing a face.
 
-The intended humor comes from reading a situation, trying to respond, and seeing awkward combinations emerge.
+I made three facial features independently controllable. A scene gives the social context; timing and energy constraints add pressure to choosing a face.
 
-<figure><img src="../../images/humanize/expression-test.webp" alt="An expression test: a character holds up an angry face while three facial-feature controls appear on the right." width="2560" height="1440" loading="lazy" /><figcaption>An expression test with a visual prompt and three facial-feature controls.</figcaption></figure>
+The intended humor comes from trying to respond appropriately while awkward combinations emerge.
 
-## 04 — Pressure & Error Tolerance
+## Controls & feedback
 
-Players do not need to match every facial feature perfectly. Some mistakes are tolerated, but a face turning purple triggers immediate failure. I designed the timing, energy constraints, success and failure rules, and feedback around this balance between expressive experimentation and pressure.
+**I designed** the core idea, interactions, objective, expression rules, timing and energy constraints, UI/UX and audio experience requirements. Programming, art and sound asset production were team contributions.
 
-<figure><video controls playsinline preload="none" poster="../../images/humanize/expression-test.webp" aria-label="Humanize gameplay demo 1"><source src="../../videos/humanize/demo-1.mp4" type="video/mp4" /><a href="../../videos/humanize/demo-1.mp4">Watch demo 1</a></video><figcaption>Gameplay recording from the supplied build.</figcaption></figure>
+The rules allow some imperfect matches; a face turning purple triggers immediate failure. The supplied footage shows the controls and face feedback in play.
 
-## 05 — My Design Contribution
+<div class="human-details"><figure><div class="human-crop controls"><img src="../../images/humanize/expression-test.webp" alt="Enlarged three facial controls from expression test" loading="lazy"/></div><figcaption>Three controls: adjust facial features independently rather than choose one complete preset face.</figcaption></figure><figure><div class="human-crop failure"><img src="../../images/humanize/dinner.webp" alt="Enlarged purple face from dinner gameplay" loading="lazy"/></div><figcaption>Failure boundary: some errors are tolerated, but turning purple causes immediate failure.</figcaption></figure></div>
 
-I designed the core concept, player interactions, objective, facial-expression mechanics, and UI/UX. I also defined audio experience requirements to support the reactions and feedback. Programming, art, and sound asset production were team contributions.
+Time and energy constrain expression choices. Exact HUD indicator mapping is not confirmed in these captures, so no unverified meter labels have been added.
 
-<figure><img src="../../images/humanize/dinner.webp" alt="The disguised character at a dinner table, with expression controls and a face preview on the right." width="2560" height="1440" loading="lazy" /><figcaption>The same facial-feature interface in a dinner scene.</figcaption></figure>
+<figure><img src="../../images/humanize/expression-test.webp" alt="An expression test: a character holds up an angry face while three facial-feature controls appear on the right." width="2560" height="1440" loading="lazy" /><figcaption>Read the requested expression, then adjust three independent facial controls. Their combinations create the awkward expression at right.</figcaption></figure>
 
-## 06 — Scope for 48 Hours
+<figure><img src="../../images/humanize/dinner.webp" alt="The disguised character at a dinner table, with expression controls and a face preview on the right." width="2560" height="1440" loading="lazy" /><figcaption>The social setting changes while the same three-part expression mechanic remains.</figcaption></figure>
 
-I kept the game centered on one main mechanic and a short, accessible experience. We tested during development, with limited time for large changes in gameplay direction.
+<figure><video controls playsinline preload="none" poster="../../images/humanize/dinner.webp" aria-label="Dinner scene and purple-face feedback"><source src="../../videos/humanize/demo-2.mp4" type="video/mp4" /><a href="../../videos/humanize/demo-2.mp4">Watch dinner scene</a></video><figcaption>Dinner scene & purple-face feedback · 9 seconds. A different context using the same facial controls.</figcaption></figure>
 
-<figure><video controls playsinline preload="none" poster="../../images/humanize/dinner.webp" aria-label="Humanize gameplay demo 2"><source src="../../videos/humanize/demo-2.mp4" type="video/mp4" /><a href="../../videos/humanize/demo-2.mp4">Watch demo 2</a></video><figcaption>Gameplay recording from the supplied build.</figcaption></figure>
+## Results & reflection
 
-## 07 — Delivered Work
+<span class="status accent">Released jam game</span>
 
-The team completed a releasable game within the jam. My work gave the central idea concrete controls, constraints, goals, and feedback that could be built within the deadline.
+The team completed a releasable game in 48 hours. We tested during development, with limited time for major direction changes.
 
-## 08 — Design Takeaway
+Keeping one main mechanic supported a short, accessible experience. Humor and expressive experimentation remain design intentions; no measured audience response is claimed.
 
-Humanize demonstrates how I turn a creative idea into a focused playable experience: use a small set of rules to support a specific emotional goal, and keep the scope aligned with the time available.
+<details><summary>Evidence still to add</summary><p>The calendar date, complete role credits and specific test observations.</p></details>

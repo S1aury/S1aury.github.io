@@ -2,6 +2,10 @@
 
 Astro 静态作品集。英文页面，中文维护说明，无服务器、数据库或前端框架依赖。正式目标仓库由本人确认为 `S1aury/S1aury.github.io`，网站已于 2026-10-23 发布到 [https://s1aury.github.io/](https://s1aury.github.io/)。
 
+## 当前本地预览
+
+当前工作区包含尚未发布的视觉与证据改版。使用下方本地运行方式预览，不能以公开网站作为本轮修改的验收结果。未经本人新的明确要求，不推送 main。
+
 ## 本地运行
 
 安装 Node.js 24 LTS（包含 npm），在本目录打开终端：
@@ -44,7 +48,7 @@ scripts/               构建产物检查
 
 ## 页面与设计
 
-首页：Hero → Internship → Selected Projects / Other Projects → Design Thinking → Production → Experience → About / Contact。五个案例分别位于 `/projects/hell-or-sell/`、`/projects/which-witch/`、`/projects/waltz-of-weights/`、`/projects/ratoolight/`、`/projects/humanize/`。
+当前预览首页：Hero → Internship summary → Selected Work → Design in Practice → About / Contact。实习详情位于 `/internship/`。五个案例分别位于 `/projects/hell-or-sell/`、`/projects/which-witch/`、`/projects/waltz-of-weights/`、`/projects/ratoolight/`、`/projects/humanize/`。
 
 暖白纸感、深色文字、橙色强调；不使用第三方字体或重型动画。CSS 几何占位与真实素材明确区分。菜单使用原生 details，关闭 JavaScript 仍能导航与阅读。支持键盘焦点、跳过导航和减少动态效果。
 
