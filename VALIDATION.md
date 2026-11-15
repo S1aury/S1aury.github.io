@@ -113,3 +113,25 @@ The approved source update was committed locally, but was not pushed or deployed
 - Humanize itch.io 页面已核对，下载链接已接入。
 - Astro check：0 errors / 0 warnings；7 页静态构建与链接、资源、五个案例结构验证通过。
 - 桌面及 390px 手机首屏已检查，未见横向溢出；保留现有媒体和部署配置。
+
+## 本地视觉与证据改版（未发布）
+- 保留 Astro/CSS/Markdown 和既有颜色；未新增依赖或修改部署配置。Game Director 按本人确认加入 Hell or Sell 角色。
+- 五个案例改为问题、决策、实现证据、结果与反思；移除强制八段的旧检查，保留四段结构、内部锚点/资源/元数据检查，并检查重复 ID 和视频封面路径。
+- 桌面 1280px、手机 390px：首页及五个案例均实际检查，无横向溢出；手机导航展开/跳转/关闭、案例目录、原图及局部放大入口已检查。
+- 六段原有视频实际播放正常；30 个唯一图片/视频/简历/图标 URL 本地 HTTP 检查返回 200。
+- Rat、Which Witch、Humanize 的 itch.io 链接已通过页面入口实际打开。
+- 背包比较标为概念图，未当作历史版本、有效解法或测量结果；原始游戏图片、视频、PDF 未修改。
+
+- 额外检查 320px 窄屏时发现案例目录撑宽网格，已通过 minmax(0, 1fr) 与 aside 的 min-width 修复；五个案例复查均无横向溢出。
+
+## 2026-11-14 本地阅读结构优化
+- Astro check：14 files，0 errors / warnings / hints；build / verify：8 routes，通过内部链接、锚点、媒体及五案例结构检查。
+- 浏览器实际检查首页、实习页、五案例：1280 / 390 / 320px，无横向溢出；检查案例首屏、实习贡献区、Humanize 裁切和 Rat 连续教学。
+- 图片弹窗放大/关闭、原图加载、目录高亮、锚点可见性已验证；修正 scroll-padding 与 scroll-margin 叠加造成的目录定位滞后。
+- 30 个本地媒体/简历/图标地址 HEAD 200；六个唯一视频可播放，无 media error；Waltz / Humanize 第二段启动后第一段暂停。下载后运行游戏未检查；外部项目链接沿用已确认地址，本轮未重新下载游戏。
+- 本地未提交/推送/发布。
+
+### 2026-11-15 实机截图与动效增量
+Astro check：15 files，0 errors / warnings / hints；build / verify：9 routes，通过。五张新增 PNG 均返回 200；新项目手机端无横向溢出，模块化地图截图放大/关闭成功；首页 TCG 图片进入 /internship/#area-2。新增 CSS 悬停过渡与一次性 Web Animations 浮现，reduced-motion 分支保留默认可见内容；无依赖、无自动播放新增。未发布。
+
+阅读节奏恢复：Astro check 15 files 零错误/警告/提示；9 路由构建及内部链接检查通过。桌面实测摘要 19px、项目标题约 41px、主项目逐行图文横排；首页、实习、Rat 与 We’ll Be Right Back 在 390px 无横向溢出。05 概览位于 Hero 与实习之间；内容与封面保留，未发布。
