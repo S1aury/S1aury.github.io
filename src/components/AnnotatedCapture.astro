@@ -1,0 +1,13 @@
+---
+import { local } from '../lib/paths';
+interface Props { src: string; alt: string; caption: string; marks?: { x: number; y: number; text: string }[]; focus?: string; eager?: boolean }
+const { src, alt, caption, marks = [], focus = '', eager = false } = Astro.props;
+---
+<figure class="capture">
+  <div class:list={['capture-frame', focus]}>
+    <a href={local(src)} aria-label={`Open full screenshot: ${alt}`}><img src={local(src)} alt={alt} loading={eager ? 'eager' : 'lazy'} width="1600" height="900" /></a>
+    {marks.map((m,i)=><span class="capture-pin" style={`left:${m.x}%;top:${m.y}%`} aria-hidden="true">{i+1}<span>↘</span></span>)}
+  </div>
+  <figcaption>{caption} <a class="capture-full" href={local(src)}>Full image ↗</a></figcaption>
+  {marks.length > 0 && <ol class="capture-notes">{marks.map((m,i)=><li><b>{i+1}</b><span>{m.text}</span></li>)}</ol>}
+</figure>
